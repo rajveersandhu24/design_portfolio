@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle.jsx';
+import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
   const location = useLocation();
@@ -8,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <Link to="/" className="logo">
-        <img src="logo.jpg" className="logo-mark" alt="Logo" />
+        <img src={logo} className="logo-mark" alt="Logo" />
         <span>Rajveer Sandhu</span>
       </Link>
 
