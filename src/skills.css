@@ -1,0 +1,129 @@
+/* MODULAR SKILLS STYLES */
+
+.skills-physics {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 40px;
+  z-index: 2;
+}
+
+.skills-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.skills-header .subtitle {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.skills-canvas {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .skills-canvas {
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.06);
+}
+
+.drag-hint {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 8px 16px;
+  border-radius: 100px;
+  pointer-events: none;
+  user-select: none;
+  border: 1px solid var(--border-color);
+}
+
+.skill-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: grab;
+  user-select: none;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  will-change: transform;
+}
+
+.skill-body:active {
+  cursor: grabbing;
+}
+
+/* Squircle logo tiles — dark bg so SVG pops */
+.skill-body.sq {
+  width: 80px;
+  height: 80px;
+  border-radius: 24px;
+  background: #1e1e20;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pills for Text Skills */
+.skill-body.pill {
+  width: auto;
+  height: 50px;
+  padding: 0 24px;
+  border-radius: 100px;
+  font-size: 1rem;
+  white-space: nowrap;
+  background: rgba(40, 40, 40, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+/* LIGHT THEME — Greige-toned tiles */
+[data-theme="light"] .skill-body {
+  background: rgba(209, 200, 179, 0.25);
+  border-color: rgba(138, 125, 107, 0.2);
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px rgba(138, 125, 107, 0.12);
+}
+
+[data-theme="light"] .skill-body.sq {
+  background: rgba(209, 200, 179, 0.35);
+}
+
+[data-theme="light"] .skill-body.pill {
+  background: rgba(209, 200, 179, 0.3);
+}
+
+/* Keep tool logo colors vibrant in light mode */
+[data-theme="light"] .skill-body.sq[data-label="Ai"] {
+  color: #cc7a00;
+}
+
+[data-theme="light"] .skill-body.sq[data-label="Ps"] {
+  color: #1a7acc;
+}
+
+[data-theme="light"] .skill-body.sq[data-label="Ae"] {
+  color: #9b5cc9;
+}
+
+[data-theme="light"] .skill-body.sq[data-label="Fg"] {
+  color: #7a3dbf;
+}

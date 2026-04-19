@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Rajveer Sandhu - Visual Designer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="skills.css">
+</head>
+<body>
+  <!-- Custom Cursor for Invert Effect -->
+  <div class="custom-cursor"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.jpg" class="logo-mark" alt="Logo">
+      <span>Rajveer Sandhu</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#" class="btn-primary">Download CV</a>
+  </nav>
+
+  <!-- Extracted 3D Visual overlay to ensure fixed positioning works outside transforms -->
+  <div class="hero-visual">
+    <!-- 3D Wireframe Cube visualization -->
+    <div class="cube-wrapper">
+      <div class="cube" id="rubiks-cube">
+        <!-- 27 Cubelets generated via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Smooth Scrolling Main Engine Wrapper -->
+  <div id="smooth-wrapper">
+    <header class="hero">
+      <div class="hero-content">
+        <div class="subtitle-badge">
+          <span class="dot"></span> VISUAL DESIGNER
+        </div>
+        <h1 class="hero-title">
+          <span class="word">SOLVING</span> <span class="word italic-accent">design</span><br>
+          <span class="word">PROBLEMS</span>
+        </h1>
+        <p class="hero-description">
+          I create digital experiences that merge clean aesthetics with robust usability, helping businesses grow and connect with their audience.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn-primary btn-large">View My Work</a>
+          <a href="#contact" class="btn-secondary">Let's Talk</a>
+        </div>
+      </div>
+    </header>
+
+  <!-- Experience / Brands -->
+  <section class="brands" id="about">
+    <p class="section-label">TRUSTED BY INNOVATIVE TEAMS</p>
+    <div class="brand-row">
+      <span>Google</span>
+      <span>Microsoft</span>
+      <span>Stripe</span>
+      <span>Vercel</span>
+      <span>Linear</span>
+    </div>
+  </section>
+
+  <!-- Interactive Skills Section -->
+  <section class="skills-physics" id="skills">
+    <div class="skills-header">
+      <p class="subtitle">(SKILLS)</p>
+    </div>
+    <!-- Physical Container where Matter.js Engine operates -->
+    <div class="skills-canvas" id="skills-canvas">
+      <div class="drag-hint">👋 Drag me!</div>
+      <!-- Physical DOM Nodes -->
+      <div class="skill-body sq" data-label="Ai">Ai</div>
+      <div class="skill-body sq" data-label="Ps">Ps</div>
+      <div class="skill-body sq" data-label="Ae">Ae</div>
+      <div class="skill-body sq" data-label="Fg">Fg</div>
+      <div class="skill-body pill" data-label="User Interviews">User Interviews</div>
+      <div class="skill-body pill" data-label="Competitive Analysis">Competitive Analysis</div>
+      <div class="skill-body pill" data-label="UI Animation">UI Animation</div>
+      <div class="skill-body pill" data-label="A/B Testing">A/B Testing</div>
+      <div class="skill-body pill" data-label="Heatmaps">Heatmaps</div>
+    </div>
+  </section>
+
+  <!-- Projects Work -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <h2 class="section-title">Selected <span class="italic-accent">projects</span></h2>
+      <a href="#" class="view-all">View all work &rarr;</a>
+    </div>
+    
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image" style="background: linear-gradient(135deg, #f0ebfe, #e0d4fc);">
+          <div class="mockup-placeholder">Fintech App Mockup</div>
+        </div>
+        <div class="project-info">
+          <h3>PayFlow Dashboard</h3>
+          <p>Financial management platform for modern startups.</p>
+          <div class="tags">
+            <span class="tag">UI/UX</span>
+            <span class="tag">Web App</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image" style="background: linear-gradient(135deg, #e6f6ee, #c3ecd4);">
+          <div class="mockup-placeholder">E-commerce Mockup</div>
+        </div>
+        <div class="project-info">
+          <h3>Lumina Storefront</h3>
+          <p>High-conversion e-commerce experience for sustainable brands.</p>
+          <div class="tags">
+            <span class="tag">E-commerce</span>
+            <span class="tag">Mobile</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Contact -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="contact-left">
+        <div class="status-badge"><span class="dot active"></span> OPEN TO WORK</div>
+        <h2>Looking for a <br><span class="italic-accent">Product Designer?</span></h2>
+      </div>
+      <div class="contact-right">
+        <h3>Let's <span class="italic-accent">talk</span></h3>
+        <ul class="contact-links">
+          <li>
+            <a href="#" class="contact-card">
+              <div class="icon">in</div>
+              <span>LinkedIN</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:rajveersandhu24creator@gmail.com" class="contact-card">
+              <div class="icon">M</div>
+              <span>rajveersandhu24creator@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="contact-card">
+              <div class="icon">CV</div>
+              <span>Download CV</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rajveer Sandhu. All rights reserved.</p>
+      <div class="socials">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Dribbble</a>
+      </div>
+    </div>
+  </footer>
+  </div> <!-- /smooth-wrapper -->
+
+  <!-- Matter.js Physics Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  
+  <!-- Local Scripts -->
+  <script src="script.js"></script>
+  <script src="skills.js"></script>
+</body>
+</html>
