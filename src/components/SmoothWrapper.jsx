@@ -4,8 +4,17 @@ const SmoothWrapper = ({ children }) => {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
+    // Check if device is mobile/touch-enabled or screen is small
+    const isMobile = window.innerWidth <= 1024 || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    
     const smoothWrapper = wrapperRef.current;
-    if (!smoothWrapper) return;
+    if (!smoothWrapper || isMobile) {
+      if (isMobile) {
+        document.body.style.height = 'auto';
+        document.body.style.overflow = 'auto';
+      }
+      return;
+    }
 
     let targetY = window.scrollY;
     let currentY = window.scrollY;
@@ -87,7 +96,7 @@ const SmoothWrapper = ({ children }) => {
     // Internal virtual scroll Anchor link Hijack since wrapper transforms
     const handleAnchorClick = (e) => {
       const targetId = e.currentTarget.getAttribute('href');
-      if (targetId === '#') return;
+      if (targetId === '#' || !targetId.startsWith('#')) return;
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();

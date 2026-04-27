@@ -12,11 +12,12 @@ const Projects = () => {
       placeholder: "Fintech App Mockup"
     },
     {
-      title: "Lumina Storefront",
-      description: "High-conversion e-commerce experience for sustainable brands.",
-      tags: ["E-commerce", "Mobile"],
-      gradient: "linear-gradient(135deg, #e6f6ee, #c3ecd4)",
-      placeholder: "E-commerce Mockup"
+      title: "Healthcare Mobile App",
+      description: "Making appointment simple, Easy and Fast for patients.",
+      tags: ["Health Care", "Mobile"],
+      gradient: "linear-gradient(135deg, #1a7acc, #005bb7)",
+      placeholder: "Care+ App Mockup",
+      image: "healthcare_app.png"
     }
   ];
 

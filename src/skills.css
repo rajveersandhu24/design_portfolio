@@ -67,6 +67,37 @@
   will-change: transform;
 }
 
+@media (max-width: 768px) {
+  .skills-physics {
+    padding: 20px;
+  }
+  
+  .skills-canvas {
+    height: auto !important;
+    min-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+  }
+
+  .drag-hint {
+    display: none;
+  }
+
+  .skill-body {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    cursor: default;
+    flex-shrink: 0;
+  }
+}
+
 .skill-body:active {
   cursor: grabbing;
 }

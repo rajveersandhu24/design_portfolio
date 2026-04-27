@@ -9,8 +9,9 @@ const PhysicsSkills = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 768;
     const canvasContainer = canvasRef.current;
-    if (!canvasContainer) return;
+    if (!canvasContainer || isMobile) return;
 
     const Engine = Matter.Engine,
       Runner = Matter.Runner,
@@ -84,7 +85,7 @@ const PhysicsSkills = () => {
     });
     canvasContainer.appendChild(mouseCanvas);
 
-    const mouse = Mouse.create(mouseCanvas);
+    const mouse = Matter.Mouse.create(mouseCanvas);
     mouse.pixelRatio = mouseCanvas.width / mouseCanvas.offsetWidth;
 
     const mouseConstraint = MouseConstraint.create(engine, {

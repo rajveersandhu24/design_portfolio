@@ -1,7 +1,12 @@
 import React, { useCallback } from 'react';
 
-const ProjectCard = ({ title, description, tags, gradient, placeholder }) => {
+const ProjectCard = ({ title, description, tags, gradient, placeholder, image }) => {
+  const imageSrc = image ? new URL(`../assets/${image}`, import.meta.url).href : null;
+
   const handleMouseMove = useCallback((e) => {
+    // Skip tilt effect on touch devices for performance
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
 
@@ -28,7 +33,11 @@ const ProjectCard = ({ title, description, tags, gradient, placeholder }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="project-image" style={{ background: gradient }}>
-        <div className="mockup-placeholder">{placeholder}</div>
+        {imageSrc ? (
+          <img src={imageSrc} alt={title} className="project-case-image" />
+        ) : (
+          <div className="mockup-placeholder">{placeholder}</div>
+        )}
       </div>
       <div className="project-info">
         <h3>{title}</h3>

@@ -13,9 +13,11 @@ const Experience = () => {
     const desc = descRef.current;
     if (!section || !desc) return;
 
-    let animId;
+    let isVisible = false;
 
     const highlightChars = () => {
+      if (!isVisible) return;
+      
       const descRect = desc.getBoundingClientRect();
       const windowH = window.innerHeight;
 
@@ -23,31 +25,51 @@ const Experience = () => {
       const descCenter = descRect.top + descRect.height / 2;
 
       // Starts highlighting when paragraph is in the lower portion of viewport
-      // Completes when paragraph reaches the center — perfect reading position
-      const startAt = windowH * 0.75;
-      const endAt = windowH * 0.45;
+      const startAt = windowH * 0.85;
+      const endAt = windowH * 0.35;
       const progress = Math.min(Math.max((startAt - descCenter) / (startAt - endAt), 0), 1);
 
       const totalChars = charsRef.current.length;
       const highlightedCount = Math.floor(progress * totalChars);
 
+      // Only update if the count has actually changed to save cycles
       charsRef.current.forEach((span, i) => {
         if (!span) return;
-        if (i < highlightedCount) {
+        const shouldBeHighlighted = i < highlightedCount;
+        const isCurrentlyHighlighted = span.classList.contains('active');
+        
+        if (shouldBeHighlighted && !isCurrentlyHighlighted) {
           span.style.color = 'var(--text-primary)';
           span.style.opacity = '1';
-        } else {
+          span.classList.add('active');
+        } else if (!shouldBeHighlighted && isCurrentlyHighlighted) {
           span.style.color = 'var(--text-secondary)';
           span.style.opacity = '0.3';
+          span.classList.remove('active');
         }
       });
-
-      animId = requestAnimationFrame(highlightChars);
     };
 
-    animId = requestAnimationFrame(highlightChars);
+    const onScroll = () => {
+      requestAnimationFrame(highlightChars);
+    };
 
-    return () => cancelAnimationFrame(animId);
+    const observer = new IntersectionObserver((entries) => {
+      isVisible = entries[0].isIntersecting;
+      if (isVisible) {
+        window.addEventListener('scroll', onScroll, { passive: true });
+        highlightChars();
+      } else {
+        window.removeEventListener('scroll', onScroll);
+      }
+    }, { threshold: 0 });
+
+    observer.observe(section);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const chars = EXPERIENCE_TEXT.split('');

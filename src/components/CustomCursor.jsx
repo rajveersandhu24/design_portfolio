@@ -2,7 +2,14 @@ import React, { useEffect } from 'react';
 
 const CustomCursor = () => {
   useEffect(() => {
+    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
     const customCursor = document.querySelector('.custom-cursor');
+    
+    if (isTouch) {
+      if (customCursor) customCursor.style.display = 'none';
+      return;
+    }
+    
     if (!customCursor) return;
 
     let mouseX = 0, mouseY = 0;
