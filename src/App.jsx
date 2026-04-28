@@ -6,21 +6,24 @@ import HeroVisual from './components/HeroVisual.jsx';
 import SmoothWrapper from './components/SmoothWrapper.jsx';
 import Home from './components/Home.jsx';
 import WorkPage from './components/WorkPage.jsx';
+import HealthcareCaseStudy from './components/HealthcareCaseStudy.jsx';
 
 function App() {
   const location = useLocation();
+  const isCaseStudy = location.pathname.includes('/case-study/');
 
   return (
     <>
       <CustomCursor />
       <Navbar />
-      <HeroVisual />
+      {!isCaseStudy && <HeroVisual />}
       
       <SmoothWrapper>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<WorkPage />} />
+            <Route path="/case-study/healthcare" element={<HealthcareCaseStudy />} />
           </Routes>
         </AnimatePresence>
       </SmoothWrapper>

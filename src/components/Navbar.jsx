@@ -1,10 +1,14 @@
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle.jsx';
 import logo from '../assets/logo.jpg';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === '/';
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav className="navbar">
@@ -13,18 +17,30 @@ const Navbar = () => {
         <span>Rajveer Sandhu</span>
       </Link>
 
-      {isHome && (
-        <ul className="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      )}
+      <div className={`nav-container ${isMenuOpen ? 'menu-active' : ''}`}>
+        {isHome && (
+          <ul className="nav-links">
+            <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
+            <li><a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+            <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
+          </ul>
+        )}
 
-      <div className="nav-actions">
-        <ThemeToggle />
-        <a href="Rajveer_Sandhu_Resume_UI_UX_Designer.pdf" download className="btn-primary">Download CV</a>
+        <div className="nav-actions">
+          <ThemeToggle />
+          <a href="Rajveer_Sandhu_Resume_UI_UX_Designer.pdf" download className="btn-primary">Download CV</a>
+        </div>
       </div>
+
+      <button 
+        className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`} 
+        onClick={toggleMenu}
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   );
 };

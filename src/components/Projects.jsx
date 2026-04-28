@@ -17,7 +17,8 @@ const Projects = () => {
       tags: ["Health Care", "Mobile"],
       gradient: "linear-gradient(135deg, #1a7acc, #005bb7)",
       placeholder: "Care+ App Mockup",
-      image: "healthcare_app.png"
+      image: "healthcare_app_images/healthcare_app_cover.png",
+      link: "/case-study/healthcare"
     }
   ];
 

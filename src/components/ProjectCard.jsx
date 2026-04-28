@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ title, description, tags, gradient, placeholder, image }) => {
+const ProjectCard = ({ title, description, tags, gradient, placeholder, image, link }) => {
   const imageSrc = image ? new URL(`../assets/${image}`, import.meta.url).href : null;
 
   const handleMouseMove = useCallback((e) => {
@@ -26,9 +27,9 @@ const ProjectCard = ({ title, description, tags, gradient, placeholder, image })
     card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
   }, []);
 
-  return (
+  const cardContent = (
     <div
-      className="project-card"
+      className={`project-card ${link ? 'clickable' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -50,6 +51,12 @@ const ProjectCard = ({ title, description, tags, gradient, placeholder, image })
       </div>
     </div>
   );
+
+  if (link) {
+    return <Link to={link} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>{cardContent}</Link>;
+  }
+
+  return cardContent;
 };
 
 export default ProjectCard;
