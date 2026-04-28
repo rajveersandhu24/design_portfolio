@@ -47,45 +47,9 @@ const SmoothWrapper = ({ children }) => {
 
     const animateScroll = () => {
       currentY += (targetY - currentY) * ease;
-      const rubiksCube = document.getElementById('rubiks-cube');
 
       if (Math.abs(targetY - currentY) > 0.01) {
         smoothWrapper.style.transform = `translate3d(0, -${currentY}px, 0)`;
-
-        if (rubiksCube) {
-          const maxScroll = document.body.scrollHeight - window.innerHeight;
-          // Calculate curved scroll ratio (0..1 bound)
-          const scrollRatio = Math.min(Math.max(currentY / (maxScroll || 1), 0), 1);
-          // Scatter uses a bell curve: starts assembled (0), scatters in middle (1), re-assembles at bottom (0)
-          const scatterFactor = Math.sin(scrollRatio * Math.PI);
-
-          const cubelets = rubiksCube.querySelectorAll('.cubelet');
-          const overallRotationOffset = currentY * 0.1;
-          const scaleModifier = 1 + (scatterFactor * 0.3); // organically swells 30% halfway down, shrinks at bottom
-
-          // Seamless launch angles matching index.css exactly
-          rubiksCube.style.transform = `rotateX(${-30 - currentY * 0.03}deg) rotateY(${-45 - overallRotationOffset}deg) scale(${scaleModifier})`;
-          const offset = 80;
-
-          cubelets.forEach((cubelet) => {
-            const x = parseFloat(cubelet.dataset.x);
-            const y = parseFloat(cubelet.dataset.y);
-            const z = parseFloat(cubelet.dataset.z);
-
-            const transX = x * offset + (x * offset * scatterFactor * 5);
-            const transY = y * offset + (y * offset * scatterFactor * 5);
-            const transZ = z * offset + (z * offset * scatterFactor * 5);
-
-            const rotX = scatterFactor * x * 180;
-            const rotY = scatterFactor * y * 180;
-            const rotZ = scatterFactor * z * 180;
-
-            cubelet.style.transform = `
-                  translate3d(${transX}px, ${transY}px, ${transZ}px) 
-                  rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)
-              `;
-          });
-        }
       }
 
       animationFrameId = requestAnimationFrame(animateScroll);

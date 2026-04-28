@@ -9,9 +9,12 @@ const PhysicsSkills = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
-    const isMobile = window.innerWidth <= 768;
     const canvasContainer = canvasRef.current;
-    if (!canvasContainer || isMobile) return;
+    if (!canvasContainer) return;
+
+    // Adjust parameters for mobile
+    const isMobile = window.innerWidth <= 768;
+    const gravityValue = isMobile ? 0.6 : 0.8; // Slightly lower gravity on mobile for better feel
 
     const Engine = Matter.Engine,
       Runner = Matter.Runner,
@@ -21,7 +24,7 @@ const PhysicsSkills = () => {
       MouseConstraint = Matter.MouseConstraint;
 
     const engine = Engine.create();
-    engine.world.gravity.y = 0.8;
+    engine.world.gravity.y = gravityValue;
 
     const width = canvasContainer.clientWidth || 800;
     const height = canvasContainer.clientHeight || 350;

@@ -45,6 +45,49 @@ const HeroVisual = () => {
       cubelet.style.transform = `translate3d(${x * offset}px, ${y * offset}px, ${z * offset}px)`;
     });
 
+    let currentScroll = window.scrollY;
+    let targetScroll = window.scrollY;
+    const ease = 0.08;
+    let animId;
+
+    const animate = () => {
+      targetScroll = window.scrollY;
+      currentScroll += (targetScroll - currentScroll) * ease;
+
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollRatio = Math.min(Math.max(currentScroll / (maxScroll || 1), 0), 1);
+      
+      const scatterFactor = Math.sin(scrollRatio * Math.PI);
+      const overallRotationOffset = currentScroll * 0.1;
+      const scaleModifier = 1 + (scatterFactor * 0.3);
+
+      cube.style.transform = `rotateX(${-30 - currentScroll * 0.03}deg) rotateY(${-45 - overallRotationOffset}deg) scale(${scaleModifier})`;
+
+      cubelets.forEach((cubelet) => {
+        const x = parseFloat(cubelet.dataset.x);
+        const y = parseFloat(cubelet.dataset.y);
+        const z = parseFloat(cubelet.dataset.z);
+
+        const transX = x * offset + (x * offset * scatterFactor * 5);
+        const transY = y * offset + (y * offset * scatterFactor * 5);
+        const transZ = z * offset + (z * offset * scatterFactor * 5);
+
+        const rotX = scatterFactor * x * 180;
+        const rotY = scatterFactor * y * 180;
+        const rotZ = scatterFactor * z * 180;
+
+        cubelet.style.transform = `
+          translate3d(${transX}px, ${transY}px, ${transZ}px) 
+          rotateX(${rotX}deg) rotateY(${rotY}deg) rotateZ(${rotZ}deg)
+        `;
+      });
+
+      animId = requestAnimationFrame(animate);
+    };
+
+    animId = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animId);
   }, []);
 
   return (
