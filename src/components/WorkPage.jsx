@@ -12,32 +12,36 @@ const WorkPage = () => {
 
   const allProjects = [
     {
-      title: "PayFlow Dashboard",
-      description: "Financial management platform for modern startups.",
-      tags: ["UI/UX", "Web App"],
+      title: "Learning platform",
+      description: "Interactive educational ecosystem designed for seamless knowledge sharing.",
+      tags: ["Learning platform", "Web platform"],
       gradient: "linear-gradient(135deg, #f0ebfe, #e0d4fc)",
-      placeholder: "Fintech App Mockup"
+      video: "LEAP/Learning_Platform_Cover_Video.mp4",
+      link: "/case-study/learning-platform"
     },
     {
-      title: "Lumina Storefront",
-      description: "High-conversion e-commerce experience for sustainable brands.",
-      tags: ["E-commerce", "Mobile"],
-      gradient: "linear-gradient(135deg, #e6f6ee, #c3ecd4)",
-      placeholder: "E-commerce Mockup"
+      title: "Healthcare Mobile App",
+      description: "Making appointment simple, Easy and Fast for patients.",
+      tags: ["Health Care", "Mobile"],
+      gradient: "linear-gradient(135deg, #1a7acc, #005bb7)",
+      image: "healthcare_app_images/healthcare_app_cover.png",
+      link: "/case-study/healthcare"
     },
     {
-      title: "Nexus CRM",
-      description: "Enterprise relationship management with AI insights.",
-      tags: ["SaaS", "Enterprise"],
-      gradient: "linear-gradient(135deg, #e0f2ff, #bde4ff)",
-      placeholder: "CRM Platform Mockup"
+      title: "EGYM24",
+      description: "Advanced gym ecosystem for personalized workout tracking and community engagement.",
+      tags: ["Fitness", "Web Platform"],
+      gradient: "linear-gradient(135deg, #e3f2fd, #bbdefb)",
+      image: "EGYM24/EGYM24_Cover.png",
+      isComingSoon: true
     },
     {
-      title: "Vivid Studio",
-      description: "Creative asset management for high-velocity teams.",
-      tags: ["Creative", "Collaboration"],
-      gradient: "linear-gradient(135deg, #fff5f5, #ffd9d9)",
-      placeholder: "Creative Tool Mockup"
+      title: "Luke Coutinho",
+      description: "A holistic wellness platform for personalized health coaching and lifestyle management.",
+      tags: ["Wellness", "App Design"],
+      gradient: "linear-gradient(135deg, #f1f8e9, #dcedc8)",
+      image: "Luke Coutinho/Luke_Coutinho_Cover.png",
+      isComingSoon: true
     }
   ];
 

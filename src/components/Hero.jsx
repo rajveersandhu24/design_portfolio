@@ -19,17 +19,17 @@ const SplitWord = ({ text, className, startIndex = 0 }) => {
 
 const Hero = () => {
   return (
-    <header className="hero">
+    <header className="hero" id="hero">
       <div className="hero-content">
         <div className="subtitle-badge">
-          <span className="dot"></span> VISUAL DESIGNER
+          <span className="dot"></span> SENIOR VISUAL DESIGNER
         </div>
         <h1 className="hero-title">
           <SplitWord text="SOLVING" startIndex={0} /> <SplitWord text="design" className="italic-accent" startIndex={7} /><br />
           <SplitWord text="PROBLEMS" startIndex={13} />
         </h1>
         <p className="hero-description">
-          I create digital experiences that merge clean aesthetics with robust usability, helping businesses grow and connect with their audience.
+          I design scalable digital products that bridge the gap between user needs and business goals. Through high-fidelity visuals and strategic usability, I help brands build lasting connections with their audience.
         </p>
         <div className="hero-actions">
           <Link to="/work" className="btn-primary btn-large">View My Work</Link>

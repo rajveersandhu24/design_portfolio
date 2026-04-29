@@ -18,8 +18,10 @@ const SmoothWrapper = ({ children }) => {
 
     let targetY = window.scrollY;
     let currentY = window.scrollY;
-    // Smooth but not sluggish — cinematic pace without feeling stuck
-    const ease = 0.04;
+    // Base ease is now 0.12 (even more responsive)
+    // We'll dynamically adjust it to be lazier (0.06) at top/bottom
+    const baseEase = 0.12;
+    const edgeEase = 0.06;
     let animationFrameId;
 
     const setBodyHeight = () => {
@@ -46,7 +48,22 @@ const SmoothWrapper = ({ children }) => {
     smoothWrapper.style.transform = `translate3d(0, -${currentY}px, 0)`;
 
     const animateScroll = () => {
-      currentY += (targetY - currentY) * ease;
+      const bodyHeight = document.body.getBoundingClientRect().height;
+      const windowH = window.innerHeight;
+      const maxScroll = bodyHeight - windowH;
+      
+      // Calculate how close we are to the edges (0 at edges, 1 in middle)
+      // We use a simple 1 - (distance from center / half_height)
+      const center = maxScroll / 2;
+      const distFromCenter = Math.abs(currentY - center);
+      const normalizedDist = Math.min(distFromCenter / center, 1);
+      
+      // Edge factor is 1 at edges, 0 in middle. 
+      // We want high ease in middle, low at edges.
+      // Dynamic Ease = baseEase - (baseEase - edgeEase) * normalizedDist
+      const dynamicEase = baseEase - (baseEase - edgeEase) * Math.pow(normalizedDist, 2);
+
+      currentY += (targetY - currentY) * dynamicEase;
 
       if (Math.abs(targetY - currentY) > 0.01) {
         smoothWrapper.style.transform = `translate3d(0, -${currentY}px, 0)`;

@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ title, description, tags, gradient, placeholder, image, link }) => {
+const ProjectCard = ({ title, description, tags, gradient, placeholder, image, video, link, isComingSoon }) => {
   const imageSrc = image ? new URL(`../assets/${image}`, import.meta.url).href : null;
+  const videoSrc = video ? new URL(`../assets/${video}`, import.meta.url).href : null;
 
   const handleMouseMove = useCallback((e) => {
     // Skip tilt effect on touch devices for performance
@@ -34,7 +35,18 @@ const ProjectCard = ({ title, description, tags, gradient, placeholder, image, l
       onMouseLeave={handleMouseLeave}
     >
       <div className="project-image" style={{ background: gradient }}>
-        {imageSrc ? (
+        {isComingSoon && <div className="coming-soon-badge">Coming Soon</div>}
+        {videoSrc ? (
+          <video 
+            src={videoSrc} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="project-case-video"
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        ) : imageSrc ? (
           <img src={imageSrc} alt={title} className="project-case-image" />
         ) : (
           <div className="mockup-placeholder">{placeholder}</div>

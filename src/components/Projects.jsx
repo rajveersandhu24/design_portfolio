@@ -5,11 +5,12 @@ import ProjectCard from './ProjectCard.jsx';
 const Projects = () => {
   const featuredProjects = [
     {
-      title: "PayFlow Dashboard",
-      description: "Financial management platform for modern startups.",
-      tags: ["UI/UX", "Web App"],
+      title: "Learning platform",
+      description: "Interactive educational ecosystem designed for seamless knowledge sharing.",
+      tags: ["Learning platform", "Web platform"],
       gradient: "linear-gradient(135deg, #f0ebfe, #e0d4fc)",
-      placeholder: "Fintech App Mockup"
+      video: "LEAP/Learning_Platform_Cover_Video.mp4",
+      link: "/case-study/learning-platform"
     },
     {
       title: "Healthcare Mobile App",
@@ -25,7 +26,7 @@ const Projects = () => {
   return (
     <section className="work" id="work">
       <div className="section-header">
-        <h2 className="section-title">Selected <span className="italic-accent">projects</span></h2>
+        <h2 className="section-title">Selected <span className="italic-accent">works</span></h2>
         <Link to="/work" className="view-all">View all work &rarr;</Link>
       </div>
       

@@ -12,16 +12,24 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="logo">
-        <img src={logo} className="logo-mark" alt="Logo" />
-        <span>Rajveer Sandhu</span>
-      </Link>
+      {isHome ? (
+        <a href="#hero" className="logo">
+          <img src={logo} className="logo-mark" alt="Logo" />
+          <span>Rajveer Sandhu</span>
+        </a>
+      ) : (
+        <Link to="/" className="logo">
+          <img src={logo} className="logo-mark" alt="Logo" />
+          <span>Rajveer Sandhu</span>
+        </Link>
+      )}
 
       <div className={`nav-container ${isMenuOpen ? 'menu-active' : ''}`}>
         {isHome && (
           <ul className="nav-links">
-            <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
             <li><a href="#work" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+            <li><a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a></li>
+            <li><a href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
             <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
           </ul>
         )}

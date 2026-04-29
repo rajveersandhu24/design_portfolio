@@ -256,6 +256,7 @@ const HealthcareCaseStudy = () => {
               </div>
             </div>
             <div className="style-card style-color-primary">
+              <span className="style-label">PRIMARY COLOR</span>
               <h3 className="color-preview-text">Aa</h3>
               <span className="hex-code">#044389</span>
             </div>
@@ -301,6 +302,7 @@ const HealthcareCaseStudy = () => {
               </div>
             </div>
             <div className="style-card style-color-secondary">
+              <span className="style-label">ACCENT COLOR</span>
               <h3 className="color-preview-text">Aa</h3>
               <span className="hex-code">#EB5E28</span>
             </div>

@@ -7,6 +7,7 @@ import SmoothWrapper from './components/SmoothWrapper.jsx';
 import Home from './components/Home.jsx';
 import WorkPage from './components/WorkPage.jsx';
 import HealthcareCaseStudy from './components/HealthcareCaseStudy.jsx';
+import LearningPlatformCaseStudy from './components/LearningPlatformCaseStudy.jsx';
 
 function App() {
   const location = useLocation();
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/case-study/healthcare" element={<HealthcareCaseStudy />} />
+            <Route path="/case-study/learning-platform" element={<LearningPlatformCaseStudy />} />
           </Routes>
         </AnimatePresence>
       </SmoothWrapper>
