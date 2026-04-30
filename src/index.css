@@ -194,12 +194,11 @@ button {
 }
 
 .hero-visual.is-transitioning {
-  transform: scale(1.8) rotate(15deg);
   z-index: 100;
 }
 
+/* Removed transition here as it conflicts with JS animation loop in Firefox */
 .hero-visual.is-transitioning .cubelet {
-  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
 }
 
 .page-transition-wrapper {
@@ -493,9 +492,10 @@ a {
   justify-content: center;
   align-items: center;
   perspective: 1500px;
-  pointer-events: none;
-  /* Let clicks pass through to content */
-  z-index: 1;
+  transform-style: preserve-3d;
+  pointer-events: none; /* Passthrough to allow background interaction */
+  /* Places it behind all content containers (z-index 2+) */
+  z-index: 1; 
 }
 
 @media (max-width: 1024px) {
@@ -512,6 +512,7 @@ a {
 .cube-wrapper {
   width: 240px;
   height: 240px;
+  transform-style: preserve-3d;
 }
 
 .cube {
@@ -540,6 +541,8 @@ a {
   background: var(--cube-fill);
   box-shadow: inset 0 0 15px var(--cube-glow);
   transition: border-color 0.4s ease, background 0.4s ease;
+  backface-visibility: hidden; /* Helps Firefox rendering */
+  transform-style: preserve-3d;
 }
 
 .front {
