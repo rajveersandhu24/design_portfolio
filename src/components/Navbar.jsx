@@ -36,7 +36,7 @@ const Navbar = () => {
 
         <div className="nav-actions">
           <ThemeToggle />
-          <a href="Rajveer_Sandhu_Resume_UI_UX_Designer.pdf" download className="btn-primary">Download CV</a>
+          <a href="/design_portfolio/Rajveer_Sandhu_Resume_UI_UX_Designer.pdf" download className="btn-primary">Download CV</a>
         </div>
       </div>
 
