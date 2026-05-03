@@ -195,47 +195,50 @@ const HealthcareCaseStudy = () => {
         <section className="cs-section cs-process">
           <h2 className="cs-section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Design Process</h2>
 
-          <div className="cs-process-staggered">
-            <div className="process-pill-row row-1">
-              <div className="process-pill">
-                <strong>Understand</strong> — (Challenge and Solution)
+          <div className="cs-process-grid">
+            <div className="process-step-card">
+              <div className="process-step-number">01</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🔎</div>
+                <h3 className="process-step-title">Understand</h3>
               </div>
-              <svg className="process-arrow arrow-1" viewBox="0 0 100 50">
-                <path d="M 0 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+              <p className="process-step-desc">Defining the core challenge and proposing an accessible, app-based solution.</p>
             </div>
-
-            <div className="process-pill-row row-2">
-              <div className="process-pill">
-                <strong>Research</strong> — (Research, User persona and Empathy map)
+            
+            <div className="process-step-card">
+              <div className="process-step-number">02</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">👥</div>
+                <h3 className="process-step-title">Research</h3>
               </div>
-              <svg className="process-arrow arrow-2" viewBox="0 0 100 50">
-                <path d="M 100 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+              <p className="process-step-desc">Conducting user research, building personas, and mapping empathy to identify pain points.</p>
             </div>
-
-            <div className="process-pill-row row-3">
-              <div className="process-pill">
-                <strong>Analyse</strong> — (User flow and Information architecture)
+            
+            <div className="process-step-card">
+              <div className="process-step-number">03</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🏗️</div>
+                <h3 className="process-step-title">Analyse</h3>
               </div>
-              <svg className="process-arrow arrow-3" viewBox="0 0 100 50">
-                <path d="M 0 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+              <p className="process-step-desc">Developing the user flow and structuring the information architecture for simplicity.</p>
             </div>
-
-            <div className="process-pill-row row-4">
-              <div className="process-pill">
-                <strong>Design</strong> — (Sketch, Visual Design and Prototyping)
+            
+            <div className="process-step-card">
+              <div className="process-step-number">04</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🎨</div>
+                <h3 className="process-step-title">Design</h3>
               </div>
-              <svg className="process-arrow arrow-4" viewBox="0 0 100 50">
-                <path d="M 100 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
+              <p className="process-step-desc">Creating wireframes, visual designs, and high-fidelity prototypes for all screens.</p>
             </div>
-
-            <div className="process-pill-row row-5">
-              <div className="process-pill">
-                <strong>Testing</strong> — (Usability testing and Feedback)
+            
+            <div className="process-step-card">
+              <div className="process-step-number">05</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🧪</div>
+                <h3 className="process-step-title">Testing</h3>
               </div>
+              <p className="process-step-desc">Validating with usability testing and refining the interface based on real feedback.</p>
             </div>
           </div>
         </section>

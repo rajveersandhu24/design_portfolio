@@ -21,12 +21,12 @@ const LearningPlatformCaseStudy = () => {
   }, [selectedImg]);
 
   const screens = [
-    { src: 'Screen 1.png', alt: 'Main Dashboard' },
-    { src: 'Screen 2.png', alt: 'Course & Instructor Details' },
-    { src: 'Screen 3.png', alt: 'Career Pathway Interface' },
-    { src: 'Screen 4.png', alt: 'Gamified User Profile' },
-    { src: 'Screen 5.png', alt: 'Learning Tracks' },
-    { src: 'Screen 6.png', alt: 'Mobile View' }
+    { src: 'Screen 1.png', alt: 'Courses Dashboard' },
+    { src: 'Screen 2.png', alt: 'Course Enroll' },
+    { src: 'Screen 3.png', alt: 'Instructor Profile' },
+    { src: 'Screen 4.png', alt: 'Career Pathway' },
+    { src: 'Screen 5.png', alt: 'Career Counselling' },
+    { src: 'Screen 6.png', alt: 'User Profile' }
   ];
 
   const handlePrev = (e) => {
@@ -86,9 +86,9 @@ const LearningPlatformCaseStudy = () => {
                   e.currentTarget.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
                 }}
               >
-                <img 
-                  src={new URL('../assets/LEAP/Screen 1.png', import.meta.url).href} 
-                  alt="Learning Platform Hero" 
+                <img
+                  src={new URL('../assets/LEAP/Screen 1.png', import.meta.url).href}
+                  alt="Learning Platform Hero"
                   className="main-mockup"
                   style={{ borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)', width: '100%', height: 'auto' }}
                 />
@@ -233,25 +233,50 @@ const LearningPlatformCaseStudy = () => {
 
         <section className="cs-section cs-process">
           <h2 className="cs-section-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Design Process</h2>
-          <div className="cs-process-staggered">
-            <div className="process-pill-row row-1">
-              <div className="process-pill" style={{ background: '#3E2723' }}><strong>Discover</strong> — Competitive analysis & user habit interviews</div>
-              <svg className="process-arrow arrow-1" viewBox="0 0 100 50"><path d="M 0 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+          <div className="cs-process-grid">
+            <div className="process-step-card">
+              <div className="process-step-number">01</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🔎</div>
+                <h3 className="process-step-title">Discover</h3>
+              </div>
+              <p className="process-step-desc">Competitive analysis & user habit interviews to understand learning pain points.</p>
             </div>
-            <div className="process-pill-row row-2">
-              <div className="process-pill" style={{ background: '#3E2723' }}><strong>Define</strong> — Structuring core IA for seamless navigation</div>
-              <svg className="process-arrow arrow-2" viewBox="0 0 100 50"><path d="M 100 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+            
+            <div className="process-step-card">
+              <div className="process-step-number">02</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🏗️</div>
+                <h3 className="process-step-title">Define</h3>
+              </div>
+              <p className="process-step-desc">Structuring core information architecture for seamless navigation and intuitive flow.</p>
             </div>
-            <div className="process-pill-row row-3">
-              <div className="process-pill" style={{ background: '#3E2723' }}><strong>Ideate</strong> — Visualizing non-confusing node-based progression</div>
-              <svg className="process-arrow arrow-3" viewBox="0 0 100 50"><path d="M 0 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+            
+            <div className="process-step-card">
+              <div className="process-step-number">03</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">💡</div>
+                <h3 className="process-step-title">Ideate</h3>
+              </div>
+              <p className="process-step-desc">Visualizing non-confusing node-based progression maps for career pathways.</p>
             </div>
-            <div className="process-pill-row row-4">
-              <div className="process-pill" style={{ background: '#3E2723' }}><strong>Design</strong> — Scalable Figma component library</div>
-              <svg className="process-arrow arrow-4" viewBox="0 0 100 50"><path d="M 100 25 Q 50 25 50 75" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+            
+            <div className="process-step-card">
+              <div className="process-step-number">04</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🎨</div>
+                <h3 className="process-step-title">Design</h3>
+              </div>
+              <p className="process-step-desc">Building a scalable Figma component library to ensure consistent UI across modules.</p>
             </div>
-            <div className="process-pill-row row-5">
-              <div className="process-pill" style={{ background: '#3E2723' }}><strong>Test</strong> — Usability testing on pathway flow intuition</div>
+            
+            <div className="process-step-card">
+              <div className="process-step-number">05</div>
+              <div className="process-step-header">
+                <div className="process-step-icon">🧪</div>
+                <h3 className="process-step-title">Test</h3>
+              </div>
+              <p className="process-step-desc">Conducting usability testing on pathway flow intuition and iterating based on feedback.</p>
             </div>
           </div>
         </section>
@@ -332,16 +357,16 @@ const LearningPlatformCaseStudy = () => {
           </p>
           <div className="cs-screens-grid grid-column-2">
             {screens.map((screen, idx) => (
-              <div 
-                key={idx} 
-                className="screen-card-full" 
+              <div
+                key={idx}
+                className="screen-card-full"
                 onClick={() => setSelectedImg(idx)}
                 style={{ cursor: 'pointer' }}
               >
-                <img 
-                  src={new URL(`../assets/LEAP/${screen.src}`, import.meta.url).href} 
-                  alt={screen.alt} 
-                  className="screen-img" 
+                <img
+                  src={new URL(`../assets/LEAP/${screen.src}`, import.meta.url).href}
+                  alt={screen.alt}
+                  className="screen-img"
                 />
                 <div className="screen-caption">{screen.alt}</div>
               </div>
@@ -373,7 +398,7 @@ const LearningPlatformCaseStudy = () => {
       {createPortal(
         <AnimatePresence>
           {selectedImg !== null && (
-            <motion.div 
+            <motion.div
               className="cs-lightbox"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -383,8 +408,8 @@ const LearningPlatformCaseStudy = () => {
               {/* Background Glows like Home Contact section */}
               <div className="lightbox-glow glow-1"></div>
               <div className="lightbox-glow glow-2"></div>
-              
-              <motion.div 
+
+              <motion.div
                 className="lightbox-content"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -392,13 +417,13 @@ const LearningPlatformCaseStudy = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <button className="lightbox-close" onClick={() => setSelectedImg(null)}>&times;</button>
-                
+
                 <div className="lightbox-main">
                   <button className="lightbox-nav prev" onClick={handlePrev}>&#8249;</button>
                   <div className="lightbox-image-container">
-                    <motion.img 
+                    <motion.img
                       key={selectedImg}
-                      src={new URL(`../assets/LEAP/${screens[selectedImg].src}`, import.meta.url).href} 
+                      src={new URL(`../assets/LEAP/${screens[selectedImg].src}`, import.meta.url).href}
                       alt={screens[selectedImg].alt}
                       initial={{ x: 100, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
@@ -412,8 +437,8 @@ const LearningPlatformCaseStudy = () => {
 
                 <div className="lightbox-thumbnails">
                   {screens.map((screen, idx) => (
-                    <div 
-                      key={idx} 
+                    <div
+                      key={idx}
                       className={`thumb ${selectedImg === idx ? 'active' : ''}`}
                       onClick={() => setSelectedImg(idx)}
                     >
