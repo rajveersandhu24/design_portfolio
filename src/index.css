@@ -213,6 +213,11 @@ button {
   /* Resetting fixed for mobile scrolling */
 }
 
+/* Fix for native anchor scrolling offset behind fixed header */
+section, #hero, #work, #experience, #skills, #contact {
+  scroll-margin-top: 100px;
+}
+
 @media (min-width: 1025px) {
   #smooth-wrapper {
     position: fixed;
@@ -1065,7 +1070,8 @@ a {
     width: 100%;
     height: auto;
     max-height: 0;
-    background-color: var(--navbar-bg);
+    /* Use solid background on mobile to avoid iOS Safari nested backdrop-filter bug */
+    background-color: var(--bg-color); 
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
@@ -1076,8 +1082,6 @@ a {
     border-left: none;
     border-bottom: 1px solid var(--border-color);
     overflow: hidden;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
   }
 
   .nav-container.menu-active {
