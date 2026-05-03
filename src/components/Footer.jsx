@@ -12,7 +12,7 @@ const Footer = () => {
           <h3>Let's <span className="italic-accent">talk</span></h3>
           <ul className="contact-links">
             <li>
-              <a href="https://www.linkedin.com/in/rajveer-singh-sandhu-2a518b175/" target="_blank" rel="noopener noreferrer" className="contact-card">
+              <a href="https://www.linkedin.com/in/rajveersandhu24/" target="_blank" rel="noopener noreferrer" className="contact-card">
                 <div className="icon">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>&copy; 2026 Rajveer Sandhu. All rights reserved.</p>
         <div className="socials">
-          <a href="https://www.linkedin.com/in/rajveer-singh-sandhu-2a518b175/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/rajveersandhu24/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://www.behance.net/rajveersandhu24" target="_blank" rel="noopener noreferrer">Behance</a>
         </div>
       </div>
