@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const HealthcareCaseStudy = () => {
+  const location = useLocation();
+  const fromCaseStudies = location.state?.from === 'Case Studies';
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -13,6 +16,12 @@ const HealthcareCaseStudy = () => {
           <Link to="/" className="home-link">
             <span className="arrow">&larr;</span> Home
           </Link>
+          {fromCaseStudies && (
+            <>
+              <span className="separator">/</span>
+              <Link to="/work" className="home-link">Case Studies</Link>
+            </>
+          )}
           <span className="separator">/</span>
           <span className="current">Healthcare App Case Study</span>
         </div>

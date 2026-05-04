@@ -2491,3 +2491,216 @@ body {
     font-size: 1.8rem;
   }
 }
+
+/* FITNESS CASE STUDY SPECIFIC STYLES */
+.fitness-cs {
+  color: var(--text-primary);
+}
+
+.fitness-hero-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch; /* Stretch to allow space-between in children */
+  padding: 20px 0 120px;
+  gap: 80px;
+  min-height: 700px; /* Force vertical distance for the text split */
+}
+
+
+
+.fitness-hero-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes text to top and bottom */
+  padding: 40px 0;
+}
+
+.fitness-hero-right {
+  flex: 1.5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fitness-brand {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.fitness-brand span {
+  color: #e65c2c;
+}
+
+.fitness-tagline {
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  opacity: 0.7;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.fitness-main-mockup img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 40px 100px rgba(0,0,0,0.5));
+}
+
+.fitness-main-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.fitness-main-title span {
+  color: #e65c2c;
+  font-weight: 800;
+}
+
+.fitness-subtitle {
+  font-size: 1rem;
+  letter-spacing: 4px;
+  opacity: 0.6;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+
+
+
+/* App Screen Grid Layout */
+.fitness-screens-section {
+  padding: 100px 0;
+}
+
+.fitness-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+.fitness-screen-card {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fitness-screen-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 48px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  transition: filter 0.4s ease;
+}
+
+.fitness-screen-card:hover {
+  transform: translateY(-12px);
+}
+
+.fitness-screen-card:hover img {
+  filter: drop-shadow(0 35px 70px rgba(0, 0, 0, 0.4));
+}
+
+.fitness-prototype-section {
+  padding: 100px 0;
+  width: 100%;
+}
+
+.cs-section-title.centered {
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--text-primary);
+}
+
+.figma-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 800px;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+  background: #1e1e1e;
+  border: 1px solid var(--border-color);
+}
+
+.figma-embed {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .figma-container {
+    min-height: 900px;
+    border-radius: 20px;
+  }
+  .fitness-hero {
+    flex-direction: column;
+    padding: 60px 0;
+  }
+  .fitness-brand {
+    font-size: 2.5rem;
+  }
+  .fitness-main-title {
+    font-size: 2.2rem;
+  }
+}
+
+.fitness-cta {
+  text-align: center;
+  padding: 140px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-primary);
+  opacity: 0.9;
+}
+
+
+@media (max-width: 1024px) {
+  .fitness-hero {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 60px 0;
+  }
+  
+  .fitness-hero-right {
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .fitness-grid-custom {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .fitness-brand { font-size: 3rem; }
+  .fitness-main-title { font-size: 2.5rem; }
+  
+  .fitness-grid-custom {
+    grid-template-columns: 1fr;
+  }
+}

@@ -8,6 +8,7 @@ import Home from './components/Home.jsx';
 import WorkPage from './components/WorkPage.jsx';
 import HealthcareCaseStudy from './components/HealthcareCaseStudy.jsx';
 import LearningPlatformCaseStudy from './components/LearningPlatformCaseStudy.jsx';
+import FitnessAppCaseStudy from './components/FitnessAppCaseStudy.jsx';
 
 function App() {
   const location = useLocation();
@@ -26,6 +27,7 @@ function App() {
             <Route path="/work" element={<WorkPage />} />
             <Route path="/case-study/healthcare" element={<HealthcareCaseStudy />} />
             <Route path="/case-study/learning-platform" element={<LearningPlatformCaseStudy />} />
+            <Route path="/case-study/fitness-app" element={<FitnessAppCaseStudy />} />
           </Routes>
         </AnimatePresence>
       </SmoothWrapper>

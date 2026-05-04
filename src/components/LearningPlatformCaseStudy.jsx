@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const LearningPlatformCaseStudy = () => {
   const [selectedImg, setSelectedImg] = useState(null);
+  const location = useLocation();
+  const fromCaseStudies = location.state?.from === 'Case Studies';
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,6 +48,12 @@ const LearningPlatformCaseStudy = () => {
           <Link to="/" className="home-link">
             <span className="arrow">&larr;</span> Home
           </Link>
+          {fromCaseStudies && (
+            <>
+              <span className="separator">/</span>
+              <Link to="/work" className="home-link">Case Studies</Link>
+            </>
+          )}
           <span className="separator">/</span>
           <span className="current">Learning Platform Case Study</span>
         </div>

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ title, description, tags, gradient, placeholder, image, video, link, isComingSoon }) => {
+const ProjectCard = ({ title, description, tags, gradient, placeholder, image, video, link, isComingSoon, origin }) => {
   const imageSrc = image ? new URL(`../assets/${image}`, import.meta.url).href : null;
   const videoSrc = video ? new URL(`../assets/${video}`, import.meta.url).href : null;
 
@@ -65,7 +65,7 @@ const ProjectCard = ({ title, description, tags, gradient, placeholder, image, v
   );
 
   if (link) {
-    return <Link to={link} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>{cardContent}</Link>;
+    return <Link to={link} state={{ from: origin }} style={{ display: 'block', textDecoration: 'none', color: 'inherit' }}>{cardContent}</Link>;
   }
 
   return cardContent;

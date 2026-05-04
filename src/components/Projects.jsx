@@ -32,7 +32,7 @@ const Projects = () => {
       
       <div className="projects-grid">
         {featuredProjects.map((project, index) => (
-          <ProjectCard key={index} {...project} />
+          <ProjectCard key={index} {...project} origin="Home" />
         ))}
       </div>
     </section>

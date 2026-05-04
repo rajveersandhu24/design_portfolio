@@ -30,10 +30,10 @@ const WorkPage = () => {
     {
       title: "EGYM24",
       description: "Advanced gym ecosystem for personalized workout tracking and community engagement.",
-      tags: ["Fitness", "Web Platform"],
-      gradient: "linear-gradient(135deg, #e3f2fd, #bbdefb)",
+      tags: ["Fitness", "Prototype"],
+      gradient: "linear-gradient(135deg, #3d2b24, #1a1512)",
       image: "EGYM24/EGYM24_Cover.png",
-      isComingSoon: true
+      link: "/case-study/fitness-app"
     },
     {
       title: "Luke Coutinho",
@@ -71,7 +71,7 @@ const WorkPage = () => {
 
         <div className="projects-grid">
           {allProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <ProjectCard key={index} {...project} origin="Case Studies" />
           ))}
         </div>
       </div>
