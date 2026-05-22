@@ -29,6 +29,13 @@ const Experience = () => {
   const timelineItemsRef = useRef([]);
   const [lineProgress, setLineProgress] = useState(0);
 
+  // Cached coordinates to prevent Layout Thrashing (Forced Synchronous Layout)
+  const cachedDescTop = useRef(0);
+  const cachedDescHeight = useRef(0);
+  const cachedTimelineTop = useRef(0);
+  const cachedTimelineHeight = useRef(0);
+  const cachedItems = useRef([]);
+
   useEffect(() => {
     const section = sectionRef.current;
     const desc = descRef.current;
@@ -37,14 +44,36 @@ const Experience = () => {
 
     let isVisible = false;
 
+    const cacheCoordinates = () => {
+      const scrollY = window.scrollY;
+      
+      const descRect = desc.getBoundingClientRect();
+      cachedDescTop.current = descRect.top + scrollY;
+      cachedDescHeight.current = descRect.height;
+
+      const timelineRect = timeline.getBoundingClientRect();
+      cachedTimelineTop.current = timelineRect.top + scrollY;
+      cachedTimelineHeight.current = timelineRect.height;
+
+      cachedItems.current = timelineItemsRef.current.map(item => {
+        if (!item) return null;
+        const rect = item.getBoundingClientRect();
+        return {
+          top: rect.top + scrollY,
+          height: rect.height
+        };
+      });
+    };
+
     const onScrollUpdate = () => {
       if (!isVisible) return;
       
       const windowH = window.innerHeight;
+      const scrollY = window.scrollY;
       
-      // 1. HIGHLIGHT TEXT CHARACTERS
-      const descRect = desc.getBoundingClientRect();
-      const descCenter = descRect.top + descRect.height / 2;
+      // 1. HIGHLIGHT TEXT CHARACTERS (Math calculation using cached dimensions)
+      const relativeDescTop = cachedDescTop.current - scrollY;
+      const descCenter = relativeDescTop + cachedDescHeight.current / 2;
       const textStart = windowH * 0.85;
       const textEnd = windowH * 0.35;
       const textProgress = Math.min(Math.max((textStart - descCenter) / (textStart - textEnd), 0), 1);
@@ -61,21 +90,22 @@ const Experience = () => {
       });
 
       // 2. HIGHLIGHT TIMELINE ITEMS & LINE
-      const timelineRect = timeline.getBoundingClientRect();
-      const timelineTop = timelineRect.top;
-      const timelineHeight = timelineRect.height;
+      const relativeTimelineTop = cachedTimelineTop.current - scrollY;
       const scrollTrigger = windowH * 0.65;
 
       // Calculate overall line progress
-      const currentScroll = scrollTrigger - timelineTop;
-      const progress = Math.min(Math.max(currentScroll / timelineHeight, 0), 1);
+      const currentScroll = scrollTrigger - relativeTimelineTop;
+      const progress = Math.min(Math.max(currentScroll / cachedTimelineHeight.current, 0), 1);
       setLineProgress(progress);
 
       // Highlight individual items
       timelineItemsRef.current.forEach((item, i) => {
         if (!item) return;
-        const itemRect = item.getBoundingClientRect();
-        const itemCenter = itemRect.top + itemRect.height / 2;
+        const cachedItem = cachedItems.current[i];
+        if (!cachedItem) return;
+        
+        const relativeItemTop = cachedItem.top - scrollY;
+        const itemCenter = relativeItemTop + cachedItem.height / 2;
         if (itemCenter < scrollTrigger) {
           item.classList.add('active');
         } else {
@@ -91,10 +121,16 @@ const Experience = () => {
     const observer = new IntersectionObserver((entries) => {
       isVisible = entries[0].isIntersecting;
       if (isVisible) {
+        cacheCoordinates();
+        // Additional deferred recalculation to allow layout to settle
+        setTimeout(cacheCoordinates, 150);
+        
         window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', cacheCoordinates, { passive: true });
         onScrollUpdate();
       } else {
         window.removeEventListener('scroll', onScroll);
+        window.removeEventListener('resize', cacheCoordinates);
       }
     }, { threshold: 0 });
 
@@ -102,6 +138,7 @@ const Experience = () => {
 
     return () => {
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', cacheCoordinates);
       observer.disconnect();
     };
   }, []);

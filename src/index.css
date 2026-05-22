@@ -202,12 +202,11 @@ button {
   width: 100%;
 }
 
-/* VIRTUAL SCROLL FRAME */
-#smooth-wrapper {
+/* SMOOTH CONTENT WRAPPER */
+#smooth-content {
   position: relative;
   width: 100%;
   z-index: 2;
-  /* Resetting fixed for mobile scrolling */
 }
 
 /* Fix for native anchor scrolling offset behind fixed header */
@@ -220,14 +219,26 @@ section,
   scroll-margin-top: 100px;
 }
 
-@media (min-width: 1025px) {
-  #smooth-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    will-change: transform;
-  }
+/* LENIS OPTIMIZATIONS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }
 
 /* TYPOGRAPHY */

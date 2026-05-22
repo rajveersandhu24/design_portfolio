@@ -26,46 +26,31 @@ const ExperienceTimeline = () => {
     const container = containerRef.current;
     if (!container) return;
 
-    let isVisible = false;
+    // Use browser-native IntersectionObserver to trigger item highlight
+    // rootMargin masks the bottom 30% of the viewport, effectively triggering
+    // the active class when the element scrolls into the top 70% of the viewport.
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -30% 0px",
+      threshold: 0
+    };
 
-    const highlightItems = () => {
-      if (!isVisible) return;
-
-      const windowH = window.innerHeight;
-      const triggerPoint = windowH * 0.7; // Start highlighting when item is at 70% of viewport
-
-      itemsRef.current.forEach((item, i) => {
-        if (!item) return;
-        const rect = item.getBoundingClientRect();
-        const itemCenter = rect.top + rect.height / 2;
-
-        if (itemCenter < triggerPoint) {
-          item.classList.add('active');
+    const itemObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
         } else {
-          item.classList.remove('active');
+          entry.target.classList.remove('active');
         }
       });
-    };
+    }, observerOptions);
 
-    const onScroll = () => {
-      requestAnimationFrame(highlightItems);
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      isVisible = entries[0].isIntersecting;
-      if (isVisible) {
-        window.addEventListener('scroll', onScroll, { passive: true });
-        highlightItems();
-      } else {
-        window.removeEventListener('scroll', onScroll);
-      }
-    }, { threshold: 0 });
-
-    observer.observe(container);
+    itemsRef.current.forEach(item => {
+      if (item) itemObserver.observe(item);
+    });
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      observer.disconnect();
+      itemObserver.disconnect();
     };
   }, []);
 
