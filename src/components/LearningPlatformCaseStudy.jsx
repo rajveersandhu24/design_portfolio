@@ -66,7 +66,7 @@ const LearningPlatformCaseStudy = () => {
               <p className="cs-subtitle">Case Study</p>
             </div>
             <h2 className="cs-main-statement">
-              Bridging the gap between course consumption and career progression.
+              Designing a learning experience that connects skill-building with real career outcomes.
             </h2>
           </div>
         </section>
@@ -118,7 +118,7 @@ const LearningPlatformCaseStudy = () => {
                   <span className="glass-tag">Upskilling</span>
                   <h3>The Vision</h3>
                 </div>
-                <p>Transforming standard LMS into a personalized career counselor through interactive roadmaps and gamified accountability.</p>
+                <p>Reimagining the traditional LMS experience with personalized career pathways, guided learning journeys, and goal-driven engagement.</p>
                 <div className="app-stats">
                   <div className="app-stat">
                     <span className="stat-num">82%</span>
@@ -143,11 +143,11 @@ const LearningPlatformCaseStudy = () => {
             <div className="cs-block">
               <h3 className="cs-block-title">Challenges</h3>
               <p className="cs-block-intro">
-                Enterprise learners struggle with long-term direction and information overload in massive course catalogs.
+                Learners often struggle to identify the right learning path when faced with large course libraries and unclear career direction.
               </p>
               <ul className="cs-list">
-                <li><strong>The "What Next?" Dilemma:</strong> Users complete courses but lack a clear understanding of required skills for long-term career goals.</li>
-                <li><strong>Low Long-Term Retention:</strong> Without a structured roadmap, learners often abandon the platform after short-term objectives.</li>
+                <li><strong>The "What Next?" Dilemma:</strong> Users complete courses without understanding how those skills contribute to long-term career progression.</li>
+                <li><strong>Low Long-Term Retention:</strong> The absence of structured learning paths leads to reduced long-term engagement and inconsistent learning habits.</li>
                 <li><strong>Information Overload:</strong> Massive catalogs leave users overwhelmed and struggling to find specific technical tracks.</li>
               </ul>
             </div>
@@ -157,9 +157,9 @@ const LearningPlatformCaseStudy = () => {
                 Bridging the gap between learning and career growth through visual guidance and personalized tracking.
               </p>
               <ul className="cs-list">
-                <li><strong>Interactive Career Mapping:</strong> Node-based "Career Pathway" connecting current roles to future goals with recommended skills.</li>
-                <li><strong>Personalized Dashboard:</strong> Immediate anchoring with weekly goals, suggested courses, and quick track access.</li>
-                <li><strong>Gamified Accountability:</strong> Performance dashboards, active goals, and community leaderboards to motivate continuous learning.</li>
+                <li><strong>Interactive Career Mapping:</strong> An interactive career roadmap that visually connects current skills, recommended courses, and future career goals.</li>
+                <li><strong>Personalized Dashboard:</strong> A personalized dashboard featuring weekly goals, recommended learning tracks, and progress visibility.</li>
+                <li><strong>Gamified Accountability:</strong> Progress tracking, milestone-based goals, and performance insights designed to encourage consistent learning habits.</li>
               </ul>
             </div>
           </div>
@@ -201,11 +201,11 @@ const LearningPlatformCaseStudy = () => {
             <div className="cs-persona-details">
               <div className="detail-group">
                 <h5>Background:</h5>
-                <p>Mark is an ambitious developer who knows he needs to learn cloud programming and advanced testing, but feels lost in the sequence of learning.</p>
+                <p>Mark wants to transition into a DevOps role but struggles to identify the right learning sequence and industry-relevant skills.</p>
               </div>
               <div className="detail-group">
                 <h5>Needs:</h5>
-                <p>A clear, step-by-step roadmap that tracks hours spent and validates progress with industry-standard certificates and badges.</p>
+                <p>A structured learning roadmap with measurable progress tracking and industry-recognized certifications.</p>
               </div>
               <div className="detail-group">
                 <h5>Frustrations:</h5>
@@ -221,19 +221,19 @@ const LearningPlatformCaseStudy = () => {
             <div className="cs-block">
               <h3 className="cs-block-title">Methodology</h3>
               <p className="cs-block-intro">
-                Competitive analysis and contextual inquiries with mid-level professionals.
+                Conducted competitive analysis and user interviews with mid-level professionals to understand learning behaviors and career progression challenges.
               </p>
               <ul className="cs-list">
-                <li><strong>Gap Analysis:</strong> Competitors lacked integrated, step-by-step career counseling despite robust catalogs.</li>
+                <li><strong>Gap Analysis:</strong> Most competing platforms offered extensive course libraries but lacked guided career progression experiences.</li>
                 <li><strong>Professional Interviews:</strong> Recurring theme was the desire for mentorship-style guidance built directly into the UI.</li>
               </ul>
             </div>
             <div className="cs-block">
               <h3 className="cs-block-title">Key Insights</h3>
               <ul className="cs-list">
-                <li><strong>82%</strong> take courses for promotion/career change rather than casual interest.</li>
-                <li><strong>65%</strong> felt overwhelmed by standard platform search functions.</li>
-                <li><strong>71%</strong> more likely to maintain habits if tracking against a specific job title goal.</li>
+                <li><strong>82%</strong> of professionals enroll in courses for career advancement or role transition.</li>
+                <li><strong>65%</strong> of users felt overwhelmed by the volume of choices in standard course catalogs.</li>
+                <li><strong>71%</strong> of users felt more motivated when learning progress was tied to a specific career objective.</li>
               </ul>
             </div>
           </div>
@@ -248,43 +248,43 @@ const LearningPlatformCaseStudy = () => {
                 <div className="process-step-icon">🔎</div>
                 <h3 className="process-step-title">Discover</h3>
               </div>
-              <p className="process-step-desc">Competitive analysis & user habit interviews to understand learning pain points.</p>
+              <p className="process-step-desc">Conducted research to identify learning challenges, motivation gaps, and platform usability pain points.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">02</div>
               <div className="process-step-header">
                 <div className="process-step-icon">🏗️</div>
                 <h3 className="process-step-title">Define</h3>
               </div>
-              <p className="process-step-desc">Structuring core information architecture for seamless navigation and intuitive flow.</p>
+              <p className="process-step-desc">Defined the information architecture to simplify navigation and improve content discoverability.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">03</div>
               <div className="process-step-header">
                 <div className="process-step-icon">💡</div>
                 <h3 className="process-step-title">Ideate</h3>
               </div>
-              <p className="process-step-desc">Visualizing non-confusing node-based progression maps for career pathways.</p>
+              <p className="process-step-desc">Explored intuitive ways to visualize career progression without overwhelming users.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">04</div>
               <div className="process-step-header">
                 <div className="process-step-icon">🎨</div>
                 <h3 className="process-step-title">Design</h3>
               </div>
-              <p className="process-step-desc">Building a scalable Figma component library to ensure consistent UI across modules.</p>
+              <p className="process-step-desc">Created a scalable design system and reusable components to maintain consistency across the platform.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">05</div>
               <div className="process-step-header">
                 <div className="process-step-icon">🧪</div>
                 <h3 className="process-step-title">Test</h3>
               </div>
-              <p className="process-step-desc">Conducting usability testing on pathway flow intuition and iterating based on feedback.</p>
+              <p className="process-step-desc">Tested user flows and navigation patterns to validate usability and improve learning journey clarity.</p>
             </div>
           </div>
         </section>
@@ -361,7 +361,7 @@ const LearningPlatformCaseStudy = () => {
         <section className="cs-section cs-main-screens">
           <h2 className="cs-section-title" style={{ textAlign: 'center' }}>Project Screens</h2>
           <p className="cs-section-desc" style={{ textAlign: 'center', margin: '0 auto 60px' }}>
-            A modular card-based system designed for scalability across courses, instructors, and personal progress maps.
+            A scalable and modular interface designed to support courses, instructor discovery, and personalized career tracking.
           </p>
           <div className="cs-screens-grid grid-column-2">
             {screens.map((screen, idx) => (
@@ -388,13 +388,13 @@ const LearningPlatformCaseStudy = () => {
               <h2 className="cs-section-title" style={{ fontSize: '4rem', marginBottom: '32px' }}>Conclusion</h2>
               <div className="cs-block-intro" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
                 <p style={{ marginBottom: '20px' }}>
-                  <strong>Project Impact:</strong> By bridging the gap between course consumption and career progression, this design transforms a standard LMS into a personalized career counselor.
+                  <strong>Project Impact:</strong> This solution transforms a traditional LMS into a career-focused learning platform that guides users beyond course completion toward long-term professional growth.
                 </p>
                 <p style={{ marginBottom: '20px' }}>
-                  <strong>Lessons Learned:</strong> Balancing complex data visualization with an intuitive, uncluttered UI was the key takeaway from the Career Pathway node map.
+                  <strong>Lessons Learned:</strong> One of the biggest challenges was simplifying complex career progression data into an experience that remained intuitive and visually approachable.
                 </p>
                 <p>
-                  <strong>Next Steps:</strong> Future iterations will integrate an AI-driven course recommendation engine based on real-time assessment scores.
+                  <strong>Next Steps:</strong> Future improvements could include AI-powered course recommendations and adaptive learning paths based on user progress and skill assessments.
                 </p>
               </div>
             </div>

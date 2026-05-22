@@ -34,7 +34,7 @@ const HealthcareCaseStudy = () => {
               <p className="cs-subtitle">Case Study</p>
             </div>
             <h2 className="cs-main-statement">
-              Making appointment simple, Easy and Fast for patients.
+              Designing a seamless healthcare booking experience for patients and medical staff.
             </h2>
           </div>
         </section>
@@ -81,7 +81,7 @@ const HealthcareCaseStudy = () => {
                   <span className="glass-tag">Innovation</span>
                   <h3>The Vision</h3>
                 </div>
-                <p>A seamless bridge between healthcare providers and patients, designed for clarity, speed, and absolute reliability.</p>
+                <p>Creating a reliable and intuitive healthcare experience that helps patients connect with doctors quickly and confidently.</p>
                 <div className="app-stats">
                   <div className="app-stat">
                     <span className="stat-num">5/5</span>
@@ -106,23 +106,23 @@ const HealthcareCaseStudy = () => {
             <div className="cs-block">
               <h3 className="cs-block-title">Challenges</h3>
               <p className="cs-block-intro">
-                How do you improve the management of appointment for the doctors and patients so that they can have access to medical care smoothly.
+                How might we simplify appointment management for both patients and healthcare providers while improving access to medical care?
               </p>
               <ul className="cs-list">
-                <li>Staff often get frustrated, and medical practices suffer significant financial losses due to inefficiency of processes currently in place.</li>
-                <li>The management of the current system of appointment is not beneficial for the employees/nurses.</li>
-                <li>The time take for this process is quite dependent of individuals.</li>
+                <li>Manual appointment workflows created operational inefficiencies and increased administrative workload for healthcare staff.</li>
+                <li>Existing appointment systems lacked streamlined workflows for nurses and hospital staff.</li>
+                <li>Appointment scheduling was heavily dependent on manual coordination, leading to delays and inconsistencies.</li>
               </ul>
             </div>
             <div className="cs-block">
               <h3 className="cs-block-title">Solutions</h3>
               <p className="cs-block-intro">
-                To address these challenges, designing a app that can work on any device and can be accessed by anyone. The app will provide basic medical care information and enable users to contact the hospital in case of an emergency or to book an appointment.
+                To address these challenges, the solution focused on creating an accessible mobile application that simplifies appointment booking and healthcare communication.
               </p>
               <ul className="cs-list">
-                <li>The nurses can access the admin application to view the booked appointments.</li>
-                <li>Secondly, they can forward the same reminder to the doctor for upcoming appointments.</li>
-                <li>Finally, developing a complex app would be a challenge and inconvenient for those who don't under how technology works.</li>
+                <li>Nurses can manage and monitor appointments through a centralized admin dashboard.</li>
+                <li>Automated appointment reminders help doctors stay informed about upcoming consultations.</li>
+                <li>The interface was intentionally designed to remain simple and accessible for users with limited technical experience.</li>
               </ul>
             </div>
           </div>
@@ -131,8 +131,7 @@ const HealthcareCaseStudy = () => {
         <section className="cs-section cs-persona">
           <h2 className="cs-section-title">User Persona</h2>
           <p className="cs-section-desc">
-            Here are some steps taken to conduct the user research:
-            Identify the target audience, Conducting interviews (quantitative data), Creating surveys gathered from quantitative data such as health conditions, access to healthcare, and technology usage.
+            User research was conducted through interviews and surveys to better understand healthcare accessibility, technology usage, and patient behavior across different demographics.
           </p>
 
           <div className="cs-persona-card">
@@ -166,23 +165,29 @@ const HealthcareCaseStudy = () => {
             <div className="cs-persona-details">
               <div className="detail-group">
                 <h5>Background:</h5>
-                <p>Aisha lives in Ibadan with her husband and two children. Her husband works in a factory and she takes care of the household. She has basic education and is fluent in English and Yoruba. She is interested in taking care of her family's health and wants to have access to medical information quickly and easily.</p>
+                <p>Aisha is a homemaker who prioritizes her family’s health and wants quick access to reliable healthcare information and appointment services through her mobile device.</p>
               </div>
               <div className="detail-group">
                 <h5>Goals and Needs:</h5>
-                <p>Aisha wants a convenient and reliable way to access medical information and services. She wants to be able to quickly get information on common health issues, find nearby clinics and hospitals, and get guidance on how to take care of her family's health. She is also interested in being able to make appointments and communicate with medical professionals if needed. Aisha prefers to use a simple and easy-to-use interface, and is comfortable with using her mobile phone for these services.</p>
+                <p>Aisha needs a simple and trustworthy platform where she can:</p>
+                <ul className="cs-persona-list">
+                  <li>Book appointments easily</li>
+                  <li>Access healthcare information quickly</li>
+                  <li>Find nearby clinics and doctors</li>
+                  <li>Communicate with healthcare providers when needed</li>
+                </ul>
               </div>
               <div className="detail-group">
                 <h5>Frustrations:</h5>
-                <p>Aisha finds it challenging to navigate the complex healthcare system in Nigeria, and often faces long wait times at clinics and hospitals. She also feels overwhelmed by the amount of information available online, and is unsure which sources to trust. She wants a solution that is quick, reliable, and easy to use, without having to spend a lot of money.</p>
+                <p>Aisha struggles with long waiting times, difficulty navigating healthcare services, and identifying trustworthy medical information online.</p>
               </div>
               <div className="detail-group">
                 <h5>Technical Abilities:</h5>
-                <p>Aisha is comfortable using a basic mobile phone, but may not be familiar with using smartphones or more advanced technology. She is, however, willing to learn and adapt to new technology if it is beneficial to her and her family's health.</p>
+                <p>Aisha is comfortable using basic mobile applications and is open to learning new technology if it improves healthcare accessibility for her family.</p>
               </div>
               <div className="detail-group">
                 <h5>Values and Motivations:</h5>
-                <p>Aisha values the health and wellbeing of her family above all else. She is motivated to take action to prevent illnesses and keep her family healthy. She also values convenience and affordability, and wants to be able to access medical services without having to travel long distances or spend a lot of money</p>
+                <p>Her primary motivation is ensuring the wellbeing of her family through accessible, affordable, and reliable healthcare services.</p>
               </div>
             </div>
           </div>
@@ -191,13 +196,13 @@ const HealthcareCaseStudy = () => {
         <section className="cs-section cs-research">
           <h2 className="cs-section-title">Research & Survey Results</h2>
           <p className="cs-section-desc">
-            Interviewing people from diverse backgrounds and age groups, including those with limited access to healthcare services. Primary pain points for these users were:
+            Interviews were conducted with users from different age groups and backgrounds to identify common healthcare accessibility challenges.
           </p>
           <ul className="cs-list cs-list-large">
-            <li>Limited access to healthcare services due to factors such as geographic location, high costs, and lack of transportation.</li>
-            <li>Difficulty in understanding medical jargon and identifying symptoms.</li>
-            <li>Forgetting to take medications on time.</li>
-            <li>Limited availability of health records and difficulties in sharing them with healthcare providers.</li>
+            <li>Limited access to healthcare services due to location, affordability, and transportation barriers.</li>
+            <li>Difficulty understanding medical terminology and identifying symptoms accurately.</li>
+            <li>Challenges in maintaining medication schedules consistently.</li>
+            <li>Difficulty accessing and sharing medical records with healthcare providers.</li>
           </ul>
         </section>
 
@@ -211,43 +216,43 @@ const HealthcareCaseStudy = () => {
                 <div className="process-step-icon">🔎</div>
                 <h3 className="process-step-title">Understand</h3>
               </div>
-              <p className="process-step-desc">Defining the core challenge and proposing an accessible, app-based solution.</p>
+              <p className="process-step-desc">Identified the core challenges in healthcare appointment management and accessibility.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">02</div>
               <div className="process-step-header">
                 <div className="process-step-icon">👥</div>
                 <h3 className="process-step-title">Research</h3>
               </div>
-              <p className="process-step-desc">Conducting user research, building personas, and mapping empathy to identify pain points.</p>
+              <p className="process-step-desc">Conducted user research and built personas to better understand patient pain points and behaviors.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">03</div>
               <div className="process-step-header">
                 <div className="process-step-icon">🏗️</div>
                 <h3 className="process-step-title">Analyse</h3>
               </div>
-              <p className="process-step-desc">Developing the user flow and structuring the information architecture for simplicity.</p>
+              <p className="process-step-desc">Structured the user flow and information architecture to simplify navigation and appointment booking.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">04</div>
               <div className="process-step-header">
                 <div className="process-step-icon">🎨</div>
                 <h3 className="process-step-title">Design</h3>
               </div>
-              <p className="process-step-desc">Creating wireframes, visual designs, and high-fidelity prototypes for all screens.</p>
+              <p className="process-step-desc">Created wireframes and high-fidelity UI designs focused on accessibility and ease of use.</p>
             </div>
-            
+
             <div className="process-step-card">
               <div className="process-step-number">05</div>
               <div className="process-step-header">
                 <div className="process-step-icon">🧪</div>
                 <h3 className="process-step-title">Testing</h3>
               </div>
-              <p className="process-step-desc">Validating with usability testing and refining the interface based on real feedback.</p>
+              <p className="process-step-desc">Validated usability through testing and refined the experience based on user feedback.</p>
             </div>
           </div>
         </section>
@@ -258,7 +263,7 @@ const HealthcareCaseStudy = () => {
             <div className="style-card style-typography">
               <span className="style-label">FONT FAMILY</span>
               <h3 className="style-font-name">Fira Sans</h3>
-              <p>Fira typefaces aim to cover the legibility needs for a large range of handsets varying in screen quality and rendering. The Fira font family comes in 3 widths, all accompanied by italic styles.</p>
+              <p>Fira Sans was selected for its readability, accessibility, and clean appearance across mobile devices and varying screen sizes.</p>
             </div>
             <div className="style-card style-weights">
               <div className="weight-info">
@@ -324,7 +329,7 @@ const HealthcareCaseStudy = () => {
         <section className="cs-section cs-main-screens">
           <h2 className="cs-section-title" style={{ textAlign: 'center' }}>Main Screens</h2>
           <p className="cs-section-desc" style={{ textAlign: 'center', margin: '0 auto 60px' }}>
-            These are the main screens where the user can view upcoming appointment, explore doctors according to the treatment, explore his bookings and view his profile where documents can be uploaded.
+            The primary screens allow users to manage appointments, explore doctors by specialization, track bookings, and maintain personal health information.
           </p>
           <div className="cs-screens-grid grid-3">
             <div className="screen-card">
@@ -345,7 +350,7 @@ const HealthcareCaseStudy = () => {
         <section className="cs-section cs-add-appointment">
           <h2 className="cs-section-title" style={{ textAlign: 'center' }}>Add Appointment Screens</h2>
           <p className="cs-section-desc" style={{ textAlign: 'center', margin: '0 auto 60px' }}>
-            Users can book an appointment by just completing a simple and short process and boom, the appointment is booked. How simple was that?
+            The appointment booking flow was designed to be quick, intuitive, and accessible, allowing users to complete the process in just a few steps.
           </p>
           <div className="cs-screens-grid grid-3">
             <div className="screen-card">
@@ -371,7 +376,7 @@ const HealthcareCaseStudy = () => {
             <div className="conclusion-text">
               <h2 className="cs-section-title" style={{ fontSize: '4rem', marginBottom: '32px' }}>Conclusion</h2>
               <p className="cs-block-intro" style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
-                Care + appointment booking application will help a lot of people as it will be a bridge for them to book the appointments easily and the workload of managing it in offline will be reduced. There will be 3 kind of applications, 1 for the patient where he/she can book the appointment, then the appointment will be forwarded the nurse app and after validating, the nurse can forward the request with approval to the doctor with the documents submitted by the user.
+                Care+ was designed to simplify the healthcare appointment experience for both patients and medical staff. The platform streamlines appointment booking, improves coordination between patients, nurses, and doctors, and reduces the inefficiencies of traditional offline systems. By focusing on accessibility and simplicity, the solution aims to make healthcare services more approachable and manageable for a wider audience.
               </p>
             </div>
             <div className="conclusion-image">
