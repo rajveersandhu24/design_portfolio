@@ -28,6 +28,14 @@ const WorkPage = () => {
       link: "/case-study/healthcare"
     },
     {
+      title: "Core UI Mobile DSL",
+      description: "A comprehensive and scalable mobile design system language built for premium products.",
+      tags: ["Design System", "Mobile DSL"],
+      gradient: "linear-gradient(135deg, #1e1b4b, #0f172a)",
+      video: "Core UI Mobile DSL/Core_UI_Thumbnail_Video.mp4",
+      isComingSoon: true
+    },
+    {
       title: "EGYM24",
       description: "Advanced gym ecosystem for personalized workout tracking and community engagement.",
       tags: ["Fitness", "Prototype"],
@@ -54,15 +62,7 @@ const WorkPage = () => {
       transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
     >
       <div className="work-page-content">
-        <header className="work-header">
-          <nav className="breadcrumb">
-            <Link to="/" className="breadcrumb-item home-link">
-              <span className="arrow">←</span> Home
-            </Link>
-            <span className="separator">/</span>
-            <span className="breadcrumb-item current">Case Studies</span>
-          </nav>
-          
+        <header className="work-header" style={{ paddingTop: '40px' }}>
           <div className="work-intro">
             <h1 className="section-title bigger">Case <span className="italic-accent">Studies</span></h1>
             <p className="work-subtitle">A curated collection of digital experiences crafting the future of enterprise SaaS and mobile ecosystems.</p>

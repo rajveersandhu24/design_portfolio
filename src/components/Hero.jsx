@@ -18,6 +18,18 @@ const SplitWord = ({ text, className, startIndex = 0 }) => {
 };
 
 const Hero = () => {
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    const element = document.querySelector('#contact');
+    if (element) {
+      if (window.lenis) {
+        window.lenis.scrollTo('#contact', { duration: 1.2 });
+      } else {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <header className="hero" id="hero">
       <div className="hero-content">
@@ -33,7 +45,7 @@ const Hero = () => {
         </p>
         <div className="hero-actions">
           <Link to="/work" className="btn-primary btn-large">View My Work</Link>
-          <a href="#contact" className="btn-secondary">Let's Talk</a>
+          <a href="#contact" className="btn-secondary" onClick={handleContactClick}>Let's Talk</a>
         </div>
       </div>
     </header>

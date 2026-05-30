@@ -12,21 +12,7 @@ const FitnessAppCaseStudy = () => {
 
   return (
     <div className="case-study-page fitness-cs">
-      <div className="case-study-content">
-        <div className="breadcrumb">
-          <Link to="/" className="home-link">
-            <span className="arrow">&larr;</span> Home
-          </Link>
-          {fromCaseStudies && (
-            <>
-              <span className="separator">/</span>
-              <Link to="/work" className="home-link">Case Studies</Link>
-            </>
-          )}
-          <span className="separator">/</span>
-          <span className="current">EGYM24 Fitness App</span>
-        </div>
-
+      <div className="case-study-content" style={{ paddingTop: '40px' }}>
         {/* EGYM24 SPLIT HERO SECTION */}
         <section className="fitness-hero-split reveal-on-scroll">
           <div className="fitness-hero-left">

@@ -46,9 +46,9 @@ const PhysicsSkills = () => {
 
     domNodes.forEach((node, idx) => {
       const isSq = node.classList.contains('sq');
-      // For logo tiles, always 80px. For pills, estimate from text length.
+      // For logo tiles, always 80px. For pills, estimate from text length, accounting for left icon.
       const innerText = node.querySelector('[data-pill-label]')?.getAttribute('data-pill-label') || node.textContent;
-      const w = isSq ? 80 : (innerText.trim().length * 9 + 48);
+      const w = isSq ? 80 : (innerText.trim().length * 9 + 72);
       const h = isSq ? 80 : 50;
       const chamfer = isSq ? 24 : 25;
 
@@ -197,19 +197,58 @@ const PhysicsSkills = () => {
         </div>
 
         {/* Text Skill Pills */}
-        <div className="skill-body pill"><span data-pill-label="User Interviews">User Interviews</span></div>
-        <div className="skill-body pill"><span data-pill-label="Competitive Analysis">Competitive Analysis</span></div>
-        <div className="skill-body pill"><span data-pill-label="UI Animation">UI Animation</span></div>
-        <div className="skill-body pill"><span data-pill-label="A/B Testing">A/B Testing</span></div>
-        <div className="skill-body pill"><span data-pill-label="Heatmaps">Heatmaps</span></div>
-        <div className="skill-body pill"><span data-pill-label="End-to-End Product Design">End-to-End Product Design</span></div>
-        <div className="skill-body pill"><span data-pill-label="Design Systems & Tokens">Design Systems &amp; Tokens</span></div>
-        <div className="skill-body pill"><span data-pill-label="Interaction & Motion">Interaction &amp; Motion</span></div>
-        <div className="skill-body pill"><span data-pill-label="Data-Driven UX">Data-Driven UX</span></div>
-        <div className="skill-body pill"><span data-pill-label="Information Architecture">Information Architecture</span></div>
-        <div className="skill-body pill"><span data-pill-label="Visual Design Craft">Visual Design Craft</span></div>
-        <div className="skill-body pill"><span data-pill-label="AI-Driven Design">AI-Driven Design</span></div>
-        <div className="skill-body pill"><span data-pill-label="Product Thinking">Product Thinking</span></div>
+        <div className="skill-body pill">
+          <span className="pill-icon">💬</span>
+          <span data-pill-label="User Interviews">User Interviews</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">📊</span>
+          <span data-pill-label="Competitive Analysis">Competitive Analysis</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">⚡</span>
+          <span data-pill-label="UI Animation">UI Animation</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🧪</span>
+          <span data-pill-label="A/B Testing">A/B Testing</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🔥</span>
+          <span data-pill-label="Heatmaps">Heatmaps</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🚀</span>
+          <span data-pill-label="End-to-End Product Design">End-to-End Product Design</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🧩</span>
+          <span data-pill-label="Design Systems & Tokens">Design Systems &amp; Tokens</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">✨</span>
+          <span data-pill-label="Interaction & Motion">Interaction &amp; Motion</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">📈</span>
+          <span data-pill-label="Data-Driven UX">Data-Driven UX</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🗺️</span>
+          <span data-pill-label="Information Architecture">Information Architecture</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🎨</span>
+          <span data-pill-label="Visual Design Craft">Visual Design Craft</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">🤖</span>
+          <span data-pill-label="AI-Driven Design">AI-Driven Design</span>
+        </div>
+        <div className="skill-body pill">
+          <span className="pill-icon">💡</span>
+          <span data-pill-label="Product Thinking">Product Thinking</span>
+        </div>
       </div>
     </section>
   );

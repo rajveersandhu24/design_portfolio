@@ -9,6 +9,7 @@ import WorkPage from './components/WorkPage.jsx';
 import HealthcareCaseStudy from './components/HealthcareCaseStudy.jsx';
 import LearningPlatformCaseStudy from './components/LearningPlatformCaseStudy.jsx';
 import FitnessAppCaseStudy from './components/FitnessAppCaseStudy.jsx';
+import CoreUiMobileDslCaseStudy from './components/CoreUiMobileDslCaseStudy.jsx';
 
 function App() {
   const location = useLocation();
@@ -28,6 +29,7 @@ function App() {
             <Route path="/case-study/healthcare" element={<HealthcareCaseStudy />} />
             <Route path="/case-study/learning-platform" element={<LearningPlatformCaseStudy />} />
             <Route path="/case-study/fitness-app" element={<FitnessAppCaseStudy />} />
+            <Route path="/case-study/core-ui-mobile-dsl" element={<CoreUiMobileDslCaseStudy />} />
           </Routes>
         </AnimatePresence>
       </SmoothWrapper>

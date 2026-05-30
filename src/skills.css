@@ -102,44 +102,65 @@
   cursor: grabbing;
 }
 
-/* Squircle logo tiles — dark bg so SVG pops */
+/* Squircle logo tiles — premium minimalist dark card style */
 .skill-body.sq {
   width: 80px;
   height: 80px;
   border-radius: 24px;
-  background: #1e1e20;
-  backdrop-filter: blur(8px);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Pills for Text Skills */
+/* Pills for Text Skills — Premium minimalist dark card style */
 .skill-body.pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: auto;
   height: 50px;
-  padding: 0 24px;
+  padding: 0 20px 0 16px;
   border-radius: 100px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   white-space: nowrap;
-  background: rgba(40, 40, 40, 0.8);
-  backdrop-filter: blur(8px);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* LIGHT THEME — Greige-toned tiles */
+.pill-icon {
+  font-size: 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.15));
+  transform: translateZ(0);
+}
+
+/* LIGHT THEME — Organic minimal cohesive styling */
 [data-theme="light"] .skill-body {
-  background: rgba(209, 200, 179, 0.25);
-  border-color: rgba(138, 125, 107, 0.2);
+  background: var(--card-bg);
+  border-color: var(--border-color);
   color: var(--text-primary);
-  box-shadow: 0 4px 16px rgba(138, 125, 107, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="light"] .skill-body.sq {
-  background: rgba(209, 200, 179, 0.35);
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="light"] .skill-body.pill {
-  background: rgba(209, 200, 179, 0.3);
+  background: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
 }
 
 /* Keep tool logo colors vibrant in light mode */

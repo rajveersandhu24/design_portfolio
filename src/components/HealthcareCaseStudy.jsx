@@ -11,21 +11,7 @@ const HealthcareCaseStudy = () => {
 
   return (
     <div className="case-study-page">
-      <div className="case-study-content">
-        <div className="breadcrumb">
-          <Link to="/" className="home-link">
-            <span className="arrow">&larr;</span> Home
-          </Link>
-          {fromCaseStudies && (
-            <>
-              <span className="separator">/</span>
-              <Link to="/work" className="home-link">Case Studies</Link>
-            </>
-          )}
-          <span className="separator">/</span>
-          <span className="current">Healthcare App Case Study</span>
-        </div>
-
+      <div className="case-study-content" style={{ paddingTop: '40px' }}>
         <section className="cs-hero">
           <div className="cs-header-content">
             <div className="cs-title-group">
