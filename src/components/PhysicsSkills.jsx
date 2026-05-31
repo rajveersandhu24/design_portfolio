@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import illustratorSvg from '../assets/adobe-illustrator.svg';
-import photoshopSvg from '../assets/adobe-photoshop.svg';
-import afterEffectsSvg from '../assets/adobe-after-effects.svg';
-import figmaSvg from '../assets/figma.svg';
+import illustratorSvg from '../assets/Logos/adobe-illustrator.svg';
+import photoshopSvg from '../assets/Logos/adobe-photoshop.svg';
+import afterEffectsSvg from '../assets/Logos/adobe-after-effects.svg';
+import figmaSvg from '../assets/Logos/figma.svg';
+import claudeSvg from '../assets/Logos/Claude-Logo.svg';
+import antigravitySvg from '../assets/Logos/Antigravity-Logo.svg';
 import Matter from 'matter-js';
 
 const PhysicsSkills = () => {
@@ -194,6 +196,12 @@ const PhysicsSkills = () => {
         </div>
         <div className="skill-body sq" data-label="Figma">
           <img src={figmaSvg} alt="Figma" width="78" height="78" draggable="false" />
+        </div>
+        <div className="skill-body sq" data-label="Claude">
+          <img src={claudeSvg} alt="Claude AI" width="78" height="78" draggable="false" />
+        </div>
+        <div className="skill-body sq" data-label="Antigravity">
+          <img src={antigravitySvg} alt="Antigravity AI" width="78" height="78" draggable="false" />
         </div>
 
         {/* Text Skill Pills */}

@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer" id="contact">
       <div className="footer-content">
         <div className="contact-left">
-          <div className="status-badge"><span className="dot active"></span> OPEN TO WORK</div>
+          <div className="status-badge"><span className="dot active"></span> OPEN TO OPPORTUNITIES</div>
           <h2>Looking for a <br /><span className="italic-accent">Product Designer?</span></h2>
         </div>
         <div className="contact-right">

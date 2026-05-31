@@ -29,10 +29,15 @@
   --radius-md: 16px;
   --radius-sm: 8px;
 
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-script: 'Cormorant Garamond', serif;
+  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-script: 'Lora', serif;
 
   --container-max: 1200px;
+
+  /* Premium Phone Mockup Shadows for Dark Theme */
+  --phone-shadow: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6)) drop-shadow(0 1px 3px rgba(255, 255, 255, 0.05));
+  --phone-shadow-hover: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 20px rgba(209, 200, 179, 0.2));
 
   /* Smooth transition for theme changes */
   color-scheme: dark;
@@ -59,6 +64,10 @@
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(0, 0, 0, 0.05);
   color-scheme: light;
+
+  /* Premium Phone Mockup Shadows for Light Theme */
+  --phone-shadow: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15)) drop-shadow(0 1px 3px rgba(0, 0, 0, 0.05));
+  --phone-shadow-hover: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.22)) drop-shadow(0 0 20px rgba(138, 125, 107, 0.15));
 }
 
 /* THEME TOGGLE SWITCH */
@@ -248,17 +257,18 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 900;
+  font-family: var(--font-heading);
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .italic-accent {
   font-family: var(--font-script);
-  font-weight: 600;
+  font-weight: 400;
   font-style: italic;
   color: var(--accent-color);
-  font-size: 1.15em;
+  font-size: 1.1em;
   letter-spacing: 0;
 }
 
@@ -1521,7 +1531,7 @@ body {
   opacity: 0.04;
   line-height: 1;
   pointer-events: none;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: -5px;
   z-index: 1;
 }
@@ -1823,31 +1833,28 @@ body {
 .screen-card {
   width: 280px;
   height: auto;
-  aspect-ratio: 9 / 19.5;
   background-color: transparent;
-  border-radius: 32px;
   position: relative;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  box-shadow:
-    0 10px 20px rgba(0, 0, 0, 0.1),
-    0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* Prevent clipping of device outer drop-shadows */
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: flex;
 }
 
 .screen-card:hover {
   transform: translateY(-15px) rotateX(5deg) rotateY(2deg);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.2),
-    0 40px 80px rgba(26, 122, 204, 0.15);
 }
 
 .screen-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 32px;
+  height: auto;
+  object-fit: contain; /* Render entire pre-modeled device frame beautifully with zero crop */
   display: block;
+  filter: var(--phone-shadow);
+  transition: filter 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.screen-card:hover .screen-img {
+  filter: var(--phone-shadow-hover);
 }
 
 /* FULL SIZE SCREEN TILES (Masonry-like) */

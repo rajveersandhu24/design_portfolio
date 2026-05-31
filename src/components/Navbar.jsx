@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle.jsx';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/Logos/RAJ-logo.jpg';
 
 const Breadcrumb = () => {
   const location = useLocation();
