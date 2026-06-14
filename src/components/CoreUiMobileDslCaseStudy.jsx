@@ -70,6 +70,40 @@ const CoreUiMobileDslCaseStudy = () => {
             </p>
           </div>
         </section>
+
+        {/* Section 7 — CTA */}
+        <section className="cs-section cs-card-section" style={{ margin: '140px 0 60px', textAlign: 'center', background: 'radial-gradient(circle, rgba(99, 102, 241, 0.05) 0%, transparent 70%), var(--card-bg)', borderRadius: '32px', border: '1px solid var(--border-color)' }}>
+          <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+              A unified mobile design language.
+            </h2>
+            <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', margin: '24px 0 40px', lineHeight: 1.6 }}>
+              Core UI sets a high standard for scalable, cohesive, and robust enterprise-grade component libraries.
+            </p>
+
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <Link 
+                to="/work" 
+                className="btn btn-primary"
+                style={{ 
+                  background: '#6366f1', 
+                  color: '#fff', 
+                  border: 'none', 
+                  padding: '16px 32px', 
+                  borderRadius: '100px', 
+                  fontSize: '1.1rem', 
+                  textDecoration: 'none', 
+                  fontWeight: 600, 
+                  boxShadow: '0 15px 30px rgba(99, 102, 241, 0.25)',
+                  transition: 'all 0.2s ease',
+                  cursor: 'pointer'
+                }}
+              >
+                Back to all work &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     </motion.div>
   );

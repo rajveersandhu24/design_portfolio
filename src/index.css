@@ -2886,3 +2886,195 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   DESIGN SYSTEM CASE STUDY STYLES
+   ========================================================================== */
+.cs-card-section {
+  padding: 80px 80px;
+}
+
+@media (max-width: 1024px) {
+  .cs-card-section {
+    padding: 60px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cs-card-section {
+    padding: 40px 24px;
+  }
+}
+
+.ds-case-study code {
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #10b981;
+  font-size: 0.9em;
+}
+
+[data-theme="light"] .ds-case-study code {
+  background: rgba(0, 0, 0, 0.05);
+  color: #047857;
+}
+
+.ds-meta-card {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  translate: 0px;
+  rotate: 0deg;
+  scale: 1;
+}
+
+.ds-meta-card:hover {
+  border-color: #10b981;
+  scale: 1.03;
+}
+
+/* Layer Stack */
+.ds-stack-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  translate: 0px;
+  rotate: 0deg;
+  scale: 1;
+}
+
+.ds-stack-card:hover {
+  border-color: #10b981;
+  transform: translateY(-2px);
+}
+
+/* AI Pipeline Card Flow */
+.ds-pipeline-container {
+  width: 100%;
+}
+
+.ds-pipeline-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.ds-pipeline-steps::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, #a855f7 0%, #3b82f6 33%, #10b981 66%, #10b981 100%);
+  z-index: 1;
+  opacity: 0.25;
+}
+
+.ds-pipeline-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.ds-pipeline-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.ds-pipeline-card[style*="--accent-color: #a855f7"]:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(168, 85, 247, 0.15);
+}
+.ds-pipeline-card[style*="--accent-color: #3b82f6"]:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(59, 130, 246, 0.15);
+}
+.ds-pipeline-card[style*="--accent-color: #10b981"]:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25), 0 0 20px rgba(16, 185, 129, 0.15);
+}
+
+.ds-pipeline-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.ds-pipeline-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.ds-pipeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Comparison Cards */
+.ds-compare-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  translate: 0px;
+  rotate: 0deg;
+  scale: 1;
+}
+
+.ds-compare-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-primary);
+}
+
+.ds-compare-card.highlighted:hover {
+  border-color: #10b981;
+  scale: 1.04;
+  box-shadow: 0 20px 45px rgba(16, 185, 129, 0.12);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .ds-pipeline-steps {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .ds-pipeline-steps::before {
+    top: 24px;
+    bottom: 24px;
+    left: 20px;
+    right: auto;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, #a855f7 0%, #3b82f6 33%, #10b981 66%, #10b981 100%);
+  }
+  
+  .ds-pipeline-card {
+    margin-left: 50px;
+  }
+  
+  .ds-pipeline-badge {
+    position: absolute;
+    left: -45px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    z-index: 3;
+    border: 2px solid var(--bg-color);
+  }
+}

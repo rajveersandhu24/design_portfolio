@@ -10,6 +10,9 @@ import HealthcareCaseStudy from './components/HealthcareCaseStudy.jsx';
 import LearningPlatformCaseStudy from './components/LearningPlatformCaseStudy.jsx';
 import FitnessAppCaseStudy from './components/FitnessAppCaseStudy.jsx';
 import CoreUiMobileDslCaseStudy from './components/CoreUiMobileDslCaseStudy.jsx';
+import DesignSystemCaseStudy from './components/DesignSystemCaseStudy.jsx';
+import BroadcastCaseStudy from './components/BroadcastCaseStudy.jsx';
+
 
 function App() {
   const location = useLocation();
@@ -30,6 +33,11 @@ function App() {
             <Route path="/case-study/learning-platform" element={<LearningPlatformCaseStudy />} />
             <Route path="/case-study/fitness-app" element={<FitnessAppCaseStudy />} />
             <Route path="/case-study/core-ui-mobile-dsl" element={<CoreUiMobileDslCaseStudy />} />
+            <Route path="/case-study/design-system" element={<DesignSystemCaseStudy />} />
+            <Route path="/work/design-system" element={<DesignSystemCaseStudy />} />
+            <Route path="/projects/design-system" element={<DesignSystemCaseStudy />} />
+            <Route path="/case-study/broadcasts-alerts" element={<BroadcastCaseStudy />} />
+
           </Routes>
         </AnimatePresence>
       </SmoothWrapper>

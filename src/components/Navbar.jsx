@@ -16,7 +16,7 @@ const Breadcrumb = () => {
 
   if (path === '/work') {
     items.push({ label: 'Case Studies', active: true });
-  } else if (path.startsWith('/case-study/')) {
+  } else if (path.startsWith('/case-study/') || path.includes('design-system')) {
     items.push({ label: 'Case Studies', to: '/work' });
     
     // Determine active case study label
@@ -25,6 +25,8 @@ const Breadcrumb = () => {
     else if (path.includes('learning-platform')) label = 'Learning Platform';
     else if (path.includes('fitness-app')) label = 'EGYM24';
     else if (path.includes('core-ui-mobile-dsl')) label = 'Core UI Mobile DSL';
+    else if (path.includes('design-system')) label = 'Design System';
+    else if (path.includes('broadcasts-alerts')) label = 'Broadcasts & Alerts';
     else label = 'Case Study';
 
     items.push({ label, active: true });

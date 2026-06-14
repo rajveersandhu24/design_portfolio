@@ -5,6 +5,22 @@ import ProjectCard from './ProjectCard.jsx';
 const Projects = () => {
   const featuredProjects = [
     {
+      title: "SquadCast",
+      description: "Designing a High-Scale Broadcast & Alerting System for Enterprise Workforces.",
+      tags: ["Prototype", "Mobile App", "Interaction Design"],
+      gradient: "linear-gradient(135deg, #2e2a24, #121214)",
+      image: "Broadcasts & Alerts/opsalert_cover.png",
+      link: "/case-study/broadcasts-alerts"
+    },
+    {
+      title: "AI-Ready Design System",
+      description: "A full component library designed in Figma — with tokens, variables, and a structure read and used by AI agents via MCP.",
+      tags: ["Design System", "AI-Ready", "Figma"],
+      gradient: "linear-gradient(135deg, #064e3b, #022c22)",
+      image: "design_system/New Cover Image.webp",
+      link: "/case-study/design-system"
+    },
+    {
       title: "Learning platform",
       description: "Interactive educational ecosystem designed for seamless knowledge sharing.",
       tags: ["Learning platform", "Web platform"],

@@ -12,6 +12,22 @@ const WorkPage = () => {
 
   const allProjects = [
     {
+      title: "SquadCast",
+      description: "Designing a High-Scale Broadcast & Alerting System for Enterprise Workforces.",
+      tags: ["Prototype", "Mobile App", "Interaction Design"],
+      gradient: "linear-gradient(135deg, #2e2a24, #121214)",
+      image: "Broadcasts & Alerts/opsalert_cover.png",
+      link: "/case-study/broadcasts-alerts"
+    },
+    {
+      title: "AI-Ready Design System",
+      description: "A full component library designed in Figma — with tokens, variables, and a structure read and used by AI agents via MCP.",
+      tags: ["Design System", "AI-Ready", "Figma"],
+      gradient: "linear-gradient(135deg, #064e3b, #022c22)",
+      image: "design_system/New Cover Image.webp",
+      link: "/case-study/design-system"
+    },
+    {
       title: "Learning platform",
       description: "Interactive educational ecosystem designed for seamless knowledge sharing.",
       tags: ["Learning platform", "Web platform"],
@@ -28,20 +44,20 @@ const WorkPage = () => {
       link: "/case-study/healthcare"
     },
     {
-      title: "Core UI Mobile DSL",
-      description: "A comprehensive and scalable mobile design system language built for premium products.",
-      tags: ["Design System", "Mobile DSL"],
-      gradient: "linear-gradient(135deg, #1e1b4b, #0f172a)",
-      video: "Core UI Mobile DSL/Core_UI_Thumbnail_Video.mp4",
-      isComingSoon: true
-    },
-    {
       title: "EGYM24",
       description: "Advanced gym ecosystem for personalized workout tracking and community engagement.",
       tags: ["Fitness", "Prototype"],
       gradient: "linear-gradient(135deg, #3d2b24, #1a1512)",
       image: "EGYM24/EGYM24_Cover.png",
       link: "/case-study/fitness-app"
+    },
+    {
+      title: "Core UI Mobile DSL",
+      description: "A comprehensive and scalable mobile design system language built for premium products.",
+      tags: ["Design System", "Mobile DSL"],
+      gradient: "linear-gradient(135deg, #1e1b4b, #0f172a)",
+      video: "Core UI Mobile DSL/Core_UI_Thumbnail_Video.mp4",
+      isComingSoon: true
     },
     {
       title: "Luke Coutinho",
