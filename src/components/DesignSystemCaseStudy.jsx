@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import FigmaVariablesShowcase from './FigmaVariablesShowcase.jsx';
 
 const DesignSystemCaseStudy = () => {
   const [activeLayer, setActiveLayer] = useState(0);
@@ -137,10 +138,10 @@ const DesignSystemCaseStudy = () => {
             {/* Meta statistics row */}
             <div className="ds-meta-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px', margin: '40px 0' }}>
               {[
-                { label: 'Experience', val: '6 years experience' },
-                { label: 'Figma Structure', val: 'Figma variables & tokens' },
-                { label: 'AI Integration', val: 'MCP-compatible structure' },
-                { label: 'Documentation', val: '6 component pages' }
+                { label: 'System Scale', val: '51 Semantic Variables' },
+                { label: 'Theming System', val: 'Dual Light & Dark Modes' },
+                { label: 'Figma Library', val: '45+ UI Components' },
+                { label: 'Handoff Ready', val: 'AI & Developer Friendly' }
               ].map((stat, i) => (
                 <div key={i} className="ds-meta-card" style={{ background: 'var(--card-bg)', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '20px', textAlign: 'center' }}>
                   <span style={{ fontSize: '0.85rem', textTransform: 'uppercase', color: 'var(--text-secondary)', letterSpacing: '0.05em' }}>{stat.label}</span>
@@ -432,19 +433,17 @@ const DesignSystemCaseStudy = () => {
                   'Hierarchy mirrors what agents expect',
                   'New modules can be generated from it',
                   'The system grows without losing consistency',
-                  'Future-proof as AI tooling evolves'
-                ].map((pt, i) => (
-                  <li key={i} style={{ display: 'flex', gap: '12px', fontSize: '1.05rem', color: i === 0 ? 'var(--text-primary)' : 'var(--text-secondary)', fontWeight: i === 0 ? '700' : 'normal', lineHeight: 1.4 }}>
-                    {i > 0 ? <span style={{ color: '#10b981' }}>&#10003;</span> : <span style={{ color: '#10b981' }}>&bull;</span>}
-                    <span>{pt}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-          </div>
-        </section>
-
+                          'Future-proof as AI tooling evolves'
+                        ].map((pt, i) => (
+                          <li key={i} style={{ display: 'flex', gap: '12px', fontSize: '1.05rem', color: i === 0 ? 'var(--text-primary)' : 'var(--text-secondary)', fontWeight: i === 0 ? '700' : 'normal', lineHeight: 1.4 }}>
+                            {i > 0 ? <span style={{ color: '#10b981' }}>&#10003;</span> : <span style={{ color: '#10b981' }}>&bull;</span>}
+                            <span>{pt}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </section>
         {/* Section 5 — Figma Embed or Screen Gallery */}
         <section id="figma-inspection-section" className="cs-section" style={{ margin: '120px 0' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -513,12 +512,22 @@ const DesignSystemCaseStudy = () => {
 
             </div>
 
-
-
           </div>
         </section>
 
-        {/* Section 6 — Process Notes */}
+        {/* Section 6 — Figma Variables Showcase */}
+        <section className="cs-section" style={{ margin: '120px 0' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span className="cs-badge" style={{ background: 'rgba(59, 130, 246, 0.1)', color: '#3b82f6', borderColor: 'rgba(59, 130, 246, 0.2)' }}>System Foundations</span>
+            <h2 className="cs-section-title" style={{ fontSize: '3rem', marginTop: '16px' }}>Figma Variables Explorer</h2>
+            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '16px auto 0', lineHeight: 1.6 }}>
+              An interactive, live view of the design system's variables. Click any color hex code or value to copy it to your clipboard.
+            </p>
+          </div>
+          <FigmaVariablesShowcase />
+        </section>
+
+        {/* Section 7 — Process Notes */}
         <section className="cs-section" style={{ margin: '120px 0' }}>
           <div style={{ textAlign: 'center', marginBottom: '60px' }}>
             <span className="cs-badge" style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', borderColor: 'rgba(16, 185, 129, 0.2)' }}>How it was made</span>
@@ -558,7 +567,7 @@ const DesignSystemCaseStudy = () => {
           </div>
         </section>
 
-        {/* Section 7 — CTA */}
+        {/* Section 8 — CTA */}
         <section className="cs-section cs-card-section" style={{ margin: '140px 0 60px', textAlign: 'center', background: 'radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%), var(--card-bg)', borderRadius: '32px', border: '1px solid var(--border-color)' }}>
           <div style={{ maxWidth: '700px', margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
